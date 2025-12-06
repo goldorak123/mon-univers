@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Découvrir mon livre</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background: url("FOND-NEBULEUSE-UNIVERSDANIEL.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 60px auto;
+            background: rgba(0, 0, 0, 0.45);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(3px);
+        }
+
+        h1 {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .sub {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .cover {
+            width: 260px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-top: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Bouton retour */
+        .back {
+            display: inline-block;
+            margin: 30px;
+            padding: 12px 22px;
+            border-radius: 25px;
+            color: #ffcc66;
+            border: 2px solid #ffcc66;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back:hover {
+            background: rgba(255, 204, 102, 0.2);
+        }
+
+        /* Bouton acheter */
+        .cta {
+            display: inline-block;
+            padding: 14px 26px;
+            border-radius: 30px;
+            border: 2px solid #ffcc66;
+            color: #ffcc66;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 25px;
+        }
+
+        .cta:hover {
+            background: rgba(255, 204, 102, 0.18);
+        }
+    </style>
+
+</head>
+<body>
+
+    <a class="back" href="index.html">← Retour à l'accueil</a>
+
+    <div class="container">
+
+        <h1>Découvrir mon livre</h1>
+        <p class="sub">
+            Un aperçu de mon œuvre <strong>Rencontres au Clair de Lune</strong>, disponible en format numérique sur Lulu.
+        </p>
+
+        <!-- ::::::: IMAGE DE LA COUVERTURE ::::::: -->
+        <img src="couverture-livre.jpg" alt="Couverture du livre Rencontres au Clair de Lune" class="cover">
+
+        <h2>Résumé :</h2>
+
+        <p>
+        « <strong>Rencontres au Clair de Lune</strong> » est un recueil d’émotions, d’ambiances et de moments suspendus.  
+        Ce livre vous transporte dans une série de récits où la sensibilité humaine, la beauté du moment présent et les réflexions sur la vie s’entremêlent dans une atmosphère intime et poétique.
+        </p>
+
+        <p>
+        Chaque texte propose une rencontre — avec les autres, avec soi-même, ou avec la fragile lumière que la lune dépose sur nos chemins.
+        </p>
+
+        <!-- ::::::: BOUTON ACHETER ::::::: -->
+        <a class="cta"
+           href="https://www.lulu.com/shop/daniel-lheureux/rencontres-au-clair-de-lune/ebook/product-1pkvn5q7.html?q=rencontres+au+clair+de+lune&page=1&pageSize=4"
+           target="_blank"
+        >
+            Acheter le livre
+        </a>
+
+    </div>
+
+</body>
+</html>
