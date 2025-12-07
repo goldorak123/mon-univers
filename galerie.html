@@ -1,199 +1,137 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Galerie – universdaniel.ca</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <title>Galerie de photos – Univers Daniel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #f7d48a;
+        }
 
-  <style>
-    :root {
-      --gold: #f7d48a;
-      --gold-soft: #e2c27a;
-      --text-main: #ffffff;
-    }
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: Arial, sans-serif;
+            color: white;
+            background: url("FOND-NEBULEUSE-UNIVERSDANIEL.jpg") no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        /* Bouton retour */
+        .btn-retour {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid var(--gold);
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: var(--gold);
+            background: rgba(5, 3, 20, 0.4);
+            backdrop-filter: blur(4px);
+            transition: 0.25s;
+            z-index: 9999;
+        }
 
-    body {
-      font-family: "Montserrat", sans-serif;
-      color: var(--text-main);
-      background-image: url("FOND-NEBULEUSE-UNIVERSDANIEL.jpg");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      min-height: 100vh;
-      padding: 40px;
-      backdrop-filter: blur(4px);
-    }
+        .btn-retour:hover {
+            background: var(--gold);
+            color: #120b22;
+            box-shadow: 0 0 12px rgba(247, 212, 138, 0.55);
+        }
 
-    header {
-      margin-bottom: 40px;
-    }
+        h1 {
+            margin-top: 80px;
+            font-size: 32px;
+            color: var(--gold);
+            margin-bottom: 40px;
+        }
 
-    .btn-retour {
-      display: inline-block;
-      margin-top: 5px;
-      padding: 10px 20px;
-      border: 1px solid var(--gold);
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 0.95rem;
-      color: var(--gold);
-      background: rgba(5, 3, 20, 0.4);
-      transition: 0.2s;
-    }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
 
-    .btn-retour:hover {
-      background: var(--gold);
-      color: #120b22;
-      box-shadow: 0 0 12px rgba(247, 212, 138, 0.55);
-    }
+        .gallery img {
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid rgba(255,255,255,0.25);
+            cursor: pointer;
+            transition: 0.25s;
+            box-shadow: 0 0 15px rgba(0,0,0,0.35);
+        }
 
-    .title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      margin-bottom: 18px;
-      color: var(--gold);
-    }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(247, 212, 138, 0.6);
+        }
 
-    .intro {
-      font-size: 1rem;
-      max-width: 720px;
-      margin-bottom: 30px;
-      line-height: 1.6;
-      background: rgba(5, 3, 20, 0.45);
-      padding: 18px 22px;
-      border-radius: 12px;
-      border: 1px solid rgba(247, 212, 138, 0.3);
-    }
+        /* Lightbox */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
 
-    .section-block {
-      margin-top: 30px;
-      margin-bottom: 35px;
-    }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(255,255,255,0.55);
+        }
+    </style>
 
-    .section-title {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 14px;
-      color: var(--gold-soft);
-    }
-
-    .gallery-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .card {
-      background: rgba(0, 0, 0, 0.45);
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      max-width: 360px;
-      flex: 1 1 260px;
-    }
-
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .card-footer {
-      padding: 10px 14px 12px;
-      font-size: 0.9rem;
-      text-align: center;
-      opacity: 0.9;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 2px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(247, 212, 138, 0.7);
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-      opacity: 0.9;
-    }
-
-    @media (max-width: 700px) {
-      body {
-        padding: 20px;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-<header>
-  <a class="btn-retour" href="index.html">← Retour à l'accueil</a>
-</header>
+    <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
 
-<h1 class="title">Galerie</h1>
+    <h1>Galerie de photos</h1>
 
-<p class="intro">
-  Voici quelques transformations dont je suis particulièrement fier : rénovation complète de la cuisine
-  et reconstruction de l'escalier. Les photos « avant / après » permettent de voir le travail accompli
-  et le résultat final.
-</p>
-
-<!-- CUISINE -->
-<section class="section-block">
-  <h2 class="section-title">Cuisine – avant et après</h2>
-
-  <div class="gallery-row">
-    <div class="card">
-      <div class="badge">Avant</div>
-      <img src="cuisine-avant.jpg" alt="Cuisine avant rénovation" />
-      <div class="card-footer">
-        Cuisine avant les travaux : armoires et finition d'origine.
-      </div>
+    <div class="gallery">
+        <img src="cuisine-avant.jpg" alt="Cuisine avant">
+        <img src="cuisine-apres.jpg" alt="Cuisine après">
+        <img src="escalier-avant.jpg" alt="Escalier avant">
+        <img src="escalier-apres.jpg" alt="Escalier après">
     </div>
 
-    <div class="card">
-      <div class="badge">Après</div>
-      <img src="cuisine-apres.jpg" alt="Cuisine après rénovation" />
-      <div class="card-footer">
-        Cuisine après rénovation : look moderne, lumineux et épuré.
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ESCALIER -->
-<section class="section-block">
-  <h2 class="section-title">Escalier – avant et après</h2>
-
-  <div class="gallery-row">
-    <div class="card">
-      <div class="badge">Avant</div>
-      <img src="escalier-avant.jpg" alt="Escalier avant rénovation" />
-      <div class="card-footer">
-        Escalier d'origine, avec revêtement et structure de départ.
-      </div>
+    <!-- Lightbox -->
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="">
     </div>
 
-    <div class="card">
-      <div class="badge">Après</div>
-      <img src="escalier-apres.jpg" alt="Escalier après rénovation" />
-      <div class="card-footer">
-        Escalier reconstruit : rangement intégré, lignes modernes et finition chaleureuse.
-      </div>
-    </div>
-  </div>
-</section>
+    <script>
+        const images = document.querySelectorAll(".gallery img");
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+
+        images.forEach(img => {
+            img.addEventListener("click", () => {
+                lightbox.style.display = "flex";
+                lightboxImg.src = img.src;
+            });
+        });
+
+        lightbox.addEventListener("click", () => {
+            lightbox.style.display = "none";
+        });
+    </script>
 
 </body>
 </html>

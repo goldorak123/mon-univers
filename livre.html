@@ -5,17 +5,47 @@
     <title>Découvrir mon livre</title>
 
     <style>
+        :root {
+            --gold: #ffd700;
+            --text-dark: #120b22;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             color: white;
             background: url("FOND-NEBULEUSE-UNIVERSDANIEL.jpg") no-repeat center center fixed;
             background-size: cover;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Bouton retour */
+        .btn-retour {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            border: 1px solid var(--gold);
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: var(--gold);
+            background: rgba(5, 3, 20, 0.4);
+            backdrop-filter: blur(6px);
+            transition: 0.25s;
+            z-index: 9999;
+        }
+        .btn-retour:hover {
+            background: var(--gold);
+            color: var(--text-dark);
+            box-shadow: 0 0 12px rgba(247,212,138,0.55);
         }
 
         .container {
             max-width: 850px;
-            margin: 60px auto;
+            margin: 120px auto 60px auto;
             background: rgba(0, 0, 0, 0.45);
             padding: 40px;
             border-radius: 20px;
@@ -25,6 +55,7 @@
         h1 {
             font-size: 45px;
             margin-bottom: 10px;
+            color: var(--gold);
         }
 
         .sub {
@@ -34,9 +65,12 @@
 
         .cover {
             width: 260px;
+            max-width: 90%;
             border-radius: 12px;
             margin-bottom: 25px;
             display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         h2 {
@@ -49,71 +83,98 @@
             line-height: 1.6;
         }
 
-        /* Bouton retour */
-        .back {
-            display: inline-block;
-            margin: 30px;
-            padding: 12px 22px;
-            border-radius: 25px;
-            color: #ffcc66;
-            border: 2px solid #ffcc66;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .back:hover {
-            background: rgba(255, 204, 102, 0.2);
-        }
-
-        /* Bouton acheter */
+        /* Bouton Acheter */
         .cta {
             display: inline-block;
             padding: 14px 26px;
             border-radius: 30px;
-            border: 2px solid #ffcc66;
-            color: #ffcc66;
+            border: 2px solid var(--gold);
+            color: var(--gold);
             font-size: 18px;
             font-weight: bold;
             text-decoration: none;
             margin-top: 25px;
+            transition: 0.25s;
         }
 
         .cta:hover {
-            background: rgba(255, 204, 102, 0.18);
+            background: var(--gold);
+            color: var(--text-dark);
+            box-shadow: 0 0 12px rgba(247,212,138,0.55);
         }
+
+        /* ----------- VERSION MOBILE ------------ */
+        @media(max-width: 768px) {
+
+            body {
+                padding: 20px 10px;
+            }
+
+            .container {
+                width: 95%;
+                padding: 25px;
+                margin-top: 140px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .sub {
+                font-size: 17px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .cta {
+                width: 90%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 17px;
+            }
+        }
+
     </style>
 
 </head>
 <body>
 
-    <a class="back" href="index.html">← Retour à l'accueil</a>
+    <!-- Bouton retour -->
+    <a class="btn-retour" href="index.html">← Retour à l'accueil</a>
 
     <div class="container">
 
         <h1>Découvrir mon livre</h1>
         <p class="sub">
-            Un aperçu de mon œuvre <strong>Rencontres au Clair de Lune</strong>, disponible en format numérique sur Lulu.
+            Un aperçu de mon œuvre <strong>Rencontres au Clair de Lune</strong>, disponible en format numérique
+            et format papier sur Lulu.com uniquement.
         </p>
 
-        <!-- ::::::: IMAGE DE LA COUVERTURE ::::::: -->
-        <img src="couverture-livre.jpg" alt="Couverture du livre Rencontres au Clair de Lune" class="cover">
+        <!-- Image couverture -->
+        <img src="couverture-livre.jpg" alt="Couverture du livre" class="cover">
 
         <h2>Résumé :</h2>
 
         <p>
-        « <strong>Rencontres au Clair de Lune</strong> » est un recueil d’émotions, d’ambiances et de moments suspendus.  
-        Ce livre vous transporte dans une série de récits où la sensibilité humaine, la beauté du moment présent et les réflexions sur la vie s’entremêlent dans une atmosphère intime et poétique.
+        Alfred Sisley, vieillard aguerri, meurtri de mélancolie, vit seul avec ses souvenirs.  
+        Il attend en silence le signe de son seul véritable amour, impuissant devant le temps,  
+        surmontant ses peines, défiant ses rêves récurrents et ses écrits déchirants.
+        <br><br>
+        Il fit la rencontre de Joé dont Sisley trouva en lui le miroir de ses trente ans,
+        une unité profonde et une puissante synergie.  
         </p>
 
-        <p>
-        Chaque texte propose une rencontre — avec les autres, avec soi-même, ou avec la fragile lumière que la lune dépose sur nos chemins.
-        </p>
-
-        <!-- ::::::: BOUTON ACHETER ::::::: -->
+        <!-- Bouton Acheter -->
         <a class="cta"
-           href="https://www.lulu.com/shop/daniel-lheureux/rencontres-au-clair-de-lune/ebook/product-1pkvn5q7.html?q=rencontres+au+clair+de+lune&page=1&pageSize=4"
-           target="_blank"
-        >
+           href="https://www.lulu.com/shop/daniel-lheureux/rencontres-au-clair-de-lune/ebook/product-1pkvn5q7.html"
+           target="_blank">
             Acheter le livre
         </a>
 
