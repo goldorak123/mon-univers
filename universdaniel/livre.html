@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Découvrir mon livre</title>
+
+    <style>
+        :root {
+            --gold: #ffd700;
+            --text-dark: #120b22;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background: url("FOND-NEBULEUSE-UNIVERSDANIEL.jpg") no-repeat center center fixed;
+            background-size: cover;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Bouton retour */
+        .btn-retour {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            border: 1px solid var(--gold);
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: var(--gold);
+            background: rgba(5, 3, 20, 0.4);
+            backdrop-filter: blur(6px);
+            transition: 0.25s;
+            z-index: 9999;
+        }
+        .btn-retour:hover {
+            background: var(--gold);
+            color: var(--text-dark);
+            box-shadow: 0 0 12px rgba(247,212,138,0.55);
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 120px auto 60px auto;
+            background: rgba(0, 0, 0, 0.45);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(3px);
+        }
+
+        h1 {
+            font-size: 45px;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+
+        .sub {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .cover {
+            width: 260px;
+            max-width: 90%;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-top: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Bouton Acheter */
+        .cta {
+            display: inline-block;
+            padding: 14px 26px;
+            border-radius: 30px;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 25px;
+            transition: 0.25s;
+        }
+
+        .cta:hover {
+            background: var(--gold);
+            color: var(--text-dark);
+            box-shadow: 0 0 12px rgba(247,212,138,0.55);
+        }
+
+        /* ----------- VERSION MOBILE ------------ */
+        @media(max-width: 768px) {
+
+            body {
+                padding: 20px 10px;
+            }
+
+            .container {
+                width: 95%;
+                padding: 25px;
+                margin-top: 140px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .sub {
+                font-size: 17px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .cta {
+                width: 90%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 17px;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <!-- Bouton retour -->
+    <a class="btn-retour" href="index.html">← Retour à l'accueil</a>
+
+    <div class="container">
+
+        <h1>Découvrir mon livre</h1>
+        <p class="sub">
+            Un aperçu de mon œuvre <strong>Rencontres au Clair de Lune</strong>, disponible en format numérique
+            et format papier sur Lulu.com uniquement.
+        </p>
+
+        <!-- Image couverture -->
+        <img src="couverture-livre.jpg" alt="Couverture du livre" class="cover">
+
+        <h2>Résumé :</h2>
+
+        <p>
+        Alfred Sisley, vieillard aguerri, meurtri de mélancolie, vit seul avec ses souvenirs.  
+        Il attend en silence le signe de son seul véritable amour, impuissant devant le temps,  
+        surmontant ses peines, défiant ses rêves récurrents et ses écrits déchirants.
+        <br><br>
+        Il fit la rencontre de Joé dont Sisley trouva en lui le miroir de ses trente ans,
+        une unité profonde et une puissante synergie.  
+        </p>
+
+        <!-- Bouton Acheter -->
+        <a class="cta"
+           href="https://www.lulu.com/shop/daniel-lheureux/rencontres-au-clair-de-lune/ebook/product-1pkvn5q7.html"
+           target="_blank">
+            Acheter le livre
+        </a>
+
+    </div>
+
+</body>
+</html>

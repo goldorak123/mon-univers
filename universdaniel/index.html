@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon-Univers</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url("FOND-NEBULEUSE-UNIVERSDANIEL.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #f5d67b;
+            text-align: center;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 50px;
+        }
+
+        .logo-zone {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-zone img {
+            height: 60px;
+        }
+
+        .site-title {
+            font-size: 33px;
+            font-weight: bold;
+            color: #f5d67b;
+        }
+
+        .top-menu {
+            display: flex;
+            gap: 40px;
+            font-size: 20px;
+        }
+
+        .top-menu a {
+            color: #f5d67b;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* SECTION CENTRALE */
+        .center-block {
+            margin-top: 165px;   /* 🔥 Tu veux tout descendre → on augmente cette valeur */
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 62px;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+
+        /* BOUTONS EN LIGNE */
+        .button-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 25px;
+            border: 2px solid #f5d67b;
+            border-radius: 12px;
+            color: #f5d67b;
+            text-decoration: none;
+            font-size: 20px;
+            backdrop-filter: blur(4px);
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: rgba(255, 215, 130, 0.2);
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo-zone">
+            <img src="LOGO-UNIVERSDANIEL.png" alt="logo">
+            <div class="site-title">Mon-Univers.ca</div>
+        </div>
+
+        <div class="top-menu">
+            <a href="#apropos">À PROPOS</a>
+            <a href="#contact">ME CONTACTER</a>
+        </div>
+    </header>
+
+
+    <!-- CONTENU CENTRAL -->
+    <div class="center-block">
+        <h2>Bienvenue sur</h2>
+        <h1>Mon-Univers.ca</h1>
+
+        <div class="button-row">
+            <a class="btn" href="cv.html">Voir mon C.V.</a>
+            <a class="btn" href="galerie.html">Galerie</a>
+            <a class="btn" href="livre.html">Découvrir mon livre</a>
+            <a class="btn" href="entreprise.html">Mon entreprise</a>
+            <a class="btn" href="memoire.html">Mon mémoire de recherche</a>
+        </div>
+    </div>
+
+
+    <!-- SECTION À PROPOS -->
+    <section id="apropos" style="margin-top: 160px; padding-bottom: 80px;">
+        <h2>À propos</h2>
+
+        <p style="width: 70%; margin: auto; font-size: 20px; line-height: 1.6;">
+            Mon-Univers.ca est une vitrine personnelle inspirée par le cosmos.
+            C'est mon porte-folio au design moderne, fluidité, animations douces,
+            ambiance spatiale. Optimisé pour mobile, tablette et ordinateur.
+        </p>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" style="margin-bottom: 200px;">
+        <h2>Me contacter</h2>
+        <p style="font-size: 20px;">daniel@mon-univers.ca</p>
+    </section>
+
+</body>
+</html>

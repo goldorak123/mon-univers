@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Voir mon C.V. – universdaniel.ca</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #f7d48a;
+      --gold-soft: #e2c27a;
+      --text-main: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      color: var(--text-main);
+      background-image: url("FOND-NEBULEUSE-UNIVERSDANIEL.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      padding: 25px 20px;
+    }
+
+    /* Bouton retour — fixe en haut à gauche */
+    .btn-retour {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 9999;
+
+      display: inline-block;
+      padding: 10px 20px;
+      border: 1px solid var(--gold);
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--gold);
+      background: rgba(5, 3, 20, 0.4);
+      backdrop-filter: blur(6px);
+      transition: 0.25s;
+    }
+
+    .btn-retour:hover {
+      background: var(--gold);
+      color: #120b22;
+      box-shadow: 0 0 12px rgba(247, 212, 138, 0.55);
+    }
+
+    h1.title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin: 90px auto 20px;
+      text-align: center;
+      color: var(--gold);
+    }
+
+    .intro {
+      font-size: 1rem;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+      background: rgba(5, 3, 20, 0.45);
+      padding: 20px 22px;
+      border-radius: 12px;
+      border: 1px solid rgba(247, 212, 138, 0.3);
+      text-align: center;
+    }
+
+    .cv-box {
+      margin: 0 auto;
+      padding: 22px;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 15px;
+      max-width: 800px;
+    }
+
+    .cv-box p {
+      margin-bottom: 14px;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    /* Optimisation téléphone */
+    @media (max-width: 768px) {
+
+      h1.title {
+        font-size: 1.6rem;
+        margin-top: 110px;
+      }
+
+      .intro {
+        font-size: 0.95rem;
+        padding: 18px;
+      }
+
+      .cv-box {
+        padding: 18px;
+      }
+
+      .cv-box p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <a class="btn-retour" href="index.html">← Retour à l'accueil</a>
+
+  <h1 class="title">Voir mon C.V.</h1>
+
+  <p class="intro">
+    Vous trouverez ci-dessous mon C.V. complet. Je mettrai cette section à jour avec mes expériences
+    professionnelles, mes compétences, ma formation ainsi que mes projets personnels et professionnels.
+  </p>
+
+  <div class="cv-box">
+    <p><strong>Nom :</strong> Daniel Lheureux</p>
+    <p><strong>Profession :</strong> Bonjour à tous</p>
+    <p><strong>Expérience :</strong> (ajouter ici…)</p>
+    <p><strong>Compétences :</strong> (ajouter ici…)</p>
+    <p><strong>Formation :</strong> (ajouter ici…)</p>
+    <p><strong>Autres informations :</strong> (ajouter ici…)</p>
+
+    <p style="margin-top:20px;">
+      👉 Vous pourrez aussi intégrer votre C.V. en PDF ici.
+    </p>
+  </div>
+
+</body>
+</html>
