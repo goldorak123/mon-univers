@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon entreprise – Univers Daniel</title>
+
+<style>
+    :root {
+        --gold: #ffcc66;
+    }
+
+    body {
+        background: url("FOND-NEBULEUSE-UNIVERSDANIEL.jpg") no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    /* Bouton retour — style universel */
+    .btn-retour {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        padding: 10px 20px;
+        border: 1px solid var(--gold);
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: bold;
+        color: var(--gold);
+        background: rgba(5, 3, 20, 0.4);
+        backdrop-filter: blur(6px);
+        transition: 0.25s;
+        z-index: 9999;
+    }
+    .btn-retour:hover {
+        background: var(--gold);
+        color: #120b22;
+        box-shadow: 0 0 12px rgba(247,212,138,0.55);
+    }
+
+    /* Titre */
+    h1 {
+        color: var(--gold);
+        margin-top: 80px;
+        margin-bottom: 20px;
+        font-size: 32px;
+    }
+
+    /* Section */
+    .section {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    /* Images entreprise */
+    .entreprise-img {
+        width: 80%;
+        max-width: 800px;
+        border: 2px solid #ffffff33;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+        transition: transform 0.25s;
+    }
+    .entreprise-img:hover {
+        transform: scale(1.02);
+    }
+
+    /* Texte */
+    p {
+        font-size: 18px;
+        color: #ddd;
+        line-height: 1.6;
+        margin-bottom: 40px;
+    }
+
+    /* ----------- MODE MOBILE ------------ */
+    @media (max-width: 768px) {
+
+        body {
+            padding: 20px 10px;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-top: 100px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .entreprise-img {
+            width: 100%;
+            max-width: 500px;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+
+    <!-- Bouton retour -->
+    <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
+
+    <h1>Mon entreprise</h1>
+
+    <div class="section">
+
+        <!-- Bandeau 1 -->
+        <img src="entreprise1.jpg" alt="Bandeau 1" class="entreprise-img">
+
+        <!-- Bandeau 2 -->
+        <img src="entreprise2.jpg" alt="Bandeau 2" class="entreprise-img">
+
+        <p>
+            Informations et présentation détaillée de mon entreprise.<br>
+            (Texte à venir…)
+        </p>
+
+    </div>
+
+</body>
+</html>
