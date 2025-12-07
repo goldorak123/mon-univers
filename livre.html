@@ -63,7 +63,8 @@
             margin-bottom: 30px;
         }
 
-        .cover {
+        /* COVER + ZOOM */
+        .book-cover {
             width: 260px;
             max-width: 90%;
             border-radius: 12px;
@@ -71,6 +72,31 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+            cursor: pointer;
+            transition: transform 0.2s;
+            border: 2px solid #ffffff33;
+        }
+
+        .book-cover:hover {
+            transform: scale(1.03);
+        }
+
+        /* MODAL ZOOM */
+        #zoom-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999999;
+        }
+
+        #zoom-modal img {
+            width: 90%;
+            max-width: 900px;
+            border-radius: 12px;
+            border: 2px solid var(--gold);
         }
 
         h2 {
@@ -157,18 +183,16 @@
             et format papier sur Lulu.com uniquement.
         </p>
 
-        <!-- Image couverture -->
-        <img src="couverture-livre.jpg" alt="Couverture du livre" class="cover">
+        <!-- Image couverture avec zoom -->
+        <img src="couverture-livre.jpg" class="book-cover" onclick="zoomImage(this)">
 
         <h2>Résumé :</h2>
 
         <p>
-        Alfred Sisley, vieillard aguerri, meurtri de mélancolie, vit seul avec ses souvenirs.  
-        Il attend en silence le signe de son seul véritable amour, impuissant devant le temps,  
-        surmontant ses peines, défiant ses rêves récurrents et ses écrits déchirants.
-        <br><br>
+        Alfred Sisley, vieillard aguerri, meurtri de mélancolie, vit seul avec ses souvenirs.<br>
+        Il attend en silence le signe de son seul véritable amour.<br><br>
         Il fit la rencontre de Joé dont Sisley trouva en lui le miroir de ses trente ans,
-        une unité profonde et une puissante synergie.  
+        une unité profonde et une puissante synergie.
         </p>
 
         <!-- Bouton Acheter -->
@@ -179,6 +203,19 @@
         </a>
 
     </div>
+
+    <!-- MODAL ZOOM -->
+    <div id="zoom-modal" onclick="this.style.display='none'">
+        <img id="zoom-img">
+    </div>
+
+    <!-- SCRIPT ZOOM -->
+    <script>
+        function zoomImage(img) {
+            document.getElementById("zoom-img").src = img.src;
+            document.getElementById("zoom-modal").style.display = "flex";
+        }
+    </script>
 
 </body>
 </html>
