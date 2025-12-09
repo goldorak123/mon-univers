@@ -26,66 +26,56 @@
         position: fixed;
         top: 20px;
         left: 20px;
-        padding: 10px 20px;
-        border: 1px solid var(--gold);
-        border-radius: 50px;
+        padding: 10px 22px;
+        border: 2px solid var(--gold);
+        border-radius: 40px;
         text-decoration: none;
-        font-size: 0.95rem;
+        font-size: 1rem;
         font-weight: bold;
         color: var(--gold);
-        background: rgba(5, 3, 20, 0.4);
+        background: rgba(5, 3, 20, 0.45);
         backdrop-filter: blur(6px);
         transition: 0.25s;
         z-index: 9999;
     }
     .btn-retour:hover {
         background: var(--gold);
-        color: var(--text-dark);
-        box-shadow: 0 0 12px rgba(247,212,138,0.55);
+        color: #000;
     }
 
-    /* --- Contenu centré --- */
+    /* --- Contenu général --- */
     .contenu {
         max-width: 900px;
-        margin: 120px auto 80px;
+        margin: 140px auto 80px;
         text-align: center;
-        padding: 20px;
+        padding: 0 20px;
     }
 
-    /* --- Image du CV flouté --- */
-    .cv-image {
-        width: 100%;
-        max-width: 800px;
-        border-radius: 12px;
-        margin-bottom: 40px;
-    }
-
-    /* --- Boutons --- */
+    /* --- Zone bouton unique --- */
     .boutons {
         display: flex;
         justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        margin-bottom: 40px;
+        margin-top: 40px;
     }
 
     .btn {
         display: inline-block;
-        padding: 12px 26px;
+        padding: 14px 32px;
         background: rgba(5, 3, 20, 0.55);
-        border: 1px solid var(--gold);
-        border-radius: 50px;
+        border: 2px solid var(--gold);
+        border-radius: 40px;
         color: var(--gold);
         text-decoration: none;
         font-weight: bold;
+        font-size: 18px;
         backdrop-filter: blur(6px);
         transition: 0.25s;
         white-space: nowrap;
     }
+
     .btn:hover {
         background: var(--gold);
-        color: #0A0A0A;
-        box-shadow: 0 0 14px rgba(247,212,138,0.55);
+        color: #000;
     }
 
 </style>
@@ -93,17 +83,13 @@
 
 <body>
 
+<!-- Bouton Retour -->
 <a href="index.html" class="btn-retour">← Retour</a>
-
 
 <div class="contenu">
 
-    <!-- Image du CV flouté -->
-    <img src="CV_daniel_flou.jpg" class="cv-image" alt="CV flouté">
-
-    <!-- Les deux boutons côte à côte -->
+    <!-- Un seul bouton : Imprimer -->
     <div class="boutons">
-        <a class="btn" href="CV_daniel.jpg" target="_blank">Télécharger le PDF</a>
         <button class="btn" onclick="window.open('CV_daniel.pdf')">Imprimer</button>
     </div>
 
