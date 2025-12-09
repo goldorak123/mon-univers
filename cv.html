@@ -21,61 +21,64 @@
         overflow-x: hidden;
     }
 
-    /* --- Bouton Retour --- */
+    /* Bouton Retour */
     .btn-retour {
         position: fixed;
         top: 20px;
         left: 20px;
-        padding: 10px 22px;
-        border: 2px solid var(--gold);
-        border-radius: 40px;
+        padding: 10px 20px;
+        border: 1px solid var(--gold);
+        border-radius: 50px;
         text-decoration: none;
-        font-size: 1rem;
+        font-size: 0.95rem;
         font-weight: bold;
         color: var(--gold);
-        background: rgba(5, 3, 20, 0.45);
+        background: rgba(5, 3, 20, 0.4);
         backdrop-filter: blur(6px);
         transition: 0.25s;
-        z-index: 9999;
+        z-index: 999;
     }
     .btn-retour:hover {
         background: var(--gold);
-        color: #000;
+        color: var(--text-dark);
+        box-shadow: 0 0 12px rgba(247,212,138,0.55);
     }
 
-    /* --- Contenu général --- */
+    /* Conteneur principal */
     .contenu {
         max-width: 900px;
-        margin: 140px auto 80px;
+        margin: 120px auto 80px;
         text-align: center;
-        padding: 0 20px;
+        padding: 20px;
     }
 
-    /* --- Zone bouton unique --- */
-    .boutons {
-        display: flex;
-        justify-content: center;
-        margin-top: 40px;
+    /* Image du CV (non floutée) */
+    .cv-image {
+        width: 100%;
+        max-width: 800px;
+        border-radius: 12px;
+        margin-bottom: 40px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.6);
     }
 
+    /* Bouton Imprimer */
     .btn {
         display: inline-block;
         padding: 14px 32px;
         background: rgba(5, 3, 20, 0.55);
-        border: 2px solid var(--gold);
-        border-radius: 40px;
+        border: 1px solid var(--gold);
+        border-radius: 50px;
         color: var(--gold);
         text-decoration: none;
         font-weight: bold;
-        font-size: 18px;
         backdrop-filter: blur(6px);
         transition: 0.25s;
-        white-space: nowrap;
+        font-size: 1.1rem;
     }
-
     .btn:hover {
         background: var(--gold);
-        color: #000;
+        color: #0A0A0A;
+        box-shadow: 0 0 14px rgba(247,212,138,0.55);
     }
 
 </style>
@@ -83,15 +86,15 @@
 
 <body>
 
-<!-- Bouton Retour -->
 <a href="index.html" class="btn-retour">← Retour</a>
 
 <div class="contenu">
 
-    <!-- Un seul bouton : Imprimer -->
-    <div class="boutons">
-        <button class="btn" onclick="window.open('CV_daniel.pdf')">Imprimer</button>
-    </div>
+    <!-- Ton CV affiché net -->
+    <img src="CV_daniel.jpg" class="cv-image" alt="CV de Daniel L'Heureux">
+
+    <!-- Bouton imprimer -->
+    <button class="btn" onclick="window.open('CV_daniel.pdf')">Imprimer</button>
 
 </div>
 
