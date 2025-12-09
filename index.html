@@ -16,30 +16,38 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            text-align: center;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            text-align: center;
         }
 
-        /* ===== LOGO (version Web) ===== */
+        /* ===== LOGO Web ===== */
         .logo {
             position: absolute;
-            top: 15px;
+            top: 5px;
             left: 20px;
-            width: 400px;   /* ← x2 plus grand qu'avant */
+            width: 360px; 
             height: auto;
             z-index: 9999;
         }
 
-        /* ===== MENU (désactivé Web + Mobile) ===== */
         .top-menu {
             display: none;
         }
 
-        /* ===== TITRES ===== */
+        /* ===== CONTENU CENTRAL ===== */
+        .main-content {
+            margin-top: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            flex-grow: 1;
+        }
+
         h1 {
-            margin-top: 140px;
+            margin-bottom: 35px;
             font-size: 28px;
             font-weight: bold;
             color: #ffd700;
@@ -53,14 +61,25 @@
         }
 
         /* ===== BOUTONS ===== */
-        .btn-container {
-            margin-top: 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            align-items: center; /* ← centre les boutons en Web */
-            width: 100%;
-        }
+        /* ===== BOUTONS ===== */
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+
+    /* Fond retiré */
+    background: none;
+    border-radius: 0;
+    padding: 0;
+
+    /* Descendre les boutons */
+    margin-top: 60px;
+}
+
+        
 
         .btn {
             width: 280px;
@@ -71,7 +90,7 @@
             color: white;
             font-size: 20px;
             text-decoration: none;
-            transition: 0.25s;
+            transition: background 0.25s;
         }
 
         .btn:hover {
@@ -80,22 +99,22 @@
 
         /* ===== FOOTER ===== */
         footer {
-            margin-top: auto;
-            background: white;
-            color: black;
-            padding: 25px 10px;
+            background: #000;
+            color: white;
+            padding: 16px 8px;
             text-align: center;
+            margin-top: 25px;
         }
 
         footer a {
-            color: black;
+            color: white;
             text-decoration: none;
-            margin: 0 12px;
+            margin: 0 10px;
             font-weight: bold;
         }
 
         footer a:hover {
-            text-decoration: underline;
+            opacity: 0.7;
         }
 
         .footer-icons {
@@ -103,12 +122,12 @@
         }
 
         .footer-icons svg {
-            width: 32px;
-            height: 32px;
-            margin: 0 10px;
-            fill: black;
+            width: 28px;
+            height: 28px;
+            margin: 0 8px;
+            fill: white;
             cursor: pointer;
-            transition: 0.2s;
+            transition: opacity 0.35s ease;
         }
 
         .footer-icons svg:hover {
@@ -118,19 +137,16 @@
         /* ===== VERSION MOBILE ===== */
         @media(max-width: 768px) {
 
-            /* Logo caché sur mobile */
             .logo {
                 display: none;
             }
 
-            /* Menu déjà caché */
-            .top-menu {
-                display: none;
+            .main-content {
+                margin-top: 60px;
             }
 
-            /* Titres remontés + réduction */
             h1 {
-                margin-top: 70px;
+                margin-bottom: 25px;
                 font-size: 26px;
             }
 
@@ -138,43 +154,44 @@
                 font-size: 42px;
             }
 
-            /* Boutons réduits */
             .btn {
                 width: 55%;
                 font-size: 18px;
             }
 
             footer {
-                padding: 20px 5px;
+                padding: 16px 6px;
             }
 
             .footer-icons svg {
-                width: 26px;
-                height: 26px;
+                width: 22px;
+                height: 22px;
             }
         }
 
     </style>
 </head>
-
 <body>
 
     <!-- LOGO -->
     <img src="LOGO-UNIVERSDANIEL.png" class="logo">
 
-    <!-- TITRE -->
-    <h1>
-        Bienvenue sur<br>
-        <span class="titre-grand">Mon-Univers.ca</span>
-    </h1>
+    <div class="main-content">
 
-    <!-- BOUTONS BLANCS -->
-    <div class="btn-container">
-        <a class="btn" href="cv.html">Mon CV</a>
-        <a class="btn" href="memoire.html">Mon mémoire</a>
-        <a class="btn" href="livre.html">Mon livre</a>
-        <a class="btn" href="galerie.html">Ma galerie</a>
-        <a class="btn" href="entreprise.html">Mon entreprise</a>
+        <h1>
+            Bienvenue sur<br>
+            <span class="titre-grand">Mon-Univers.ca</span>
+        </h1>
+
+        <!-- BOUTONS -->
+        <div class="btn-container">
+            <a class="btn" href="cv.html">Mon CV</a>
+            <a class="btn" href="memoire.html">Mon mémoire</a>
+            <a class="btn" href="livre.html">Mon livre</a>
+            <a class="btn" href="galerie.html">Ma galerie</a>
+            <a class="btn" href="entreprise.html">Mon entreprise</a>
+        </div>
+
     </div>
 
     <!-- ===== FOOTER ===== -->
@@ -182,17 +199,17 @@
 
         <div class="footer-icons">
 
-            <!-- YouTube SVG (noir) -->
+            <!-- YouTube (blanc) -->
             <a href="#" target="_blank">
                 <svg viewBox="0 0 576 512">
                     <path d="M549.7 124.1c-6.3-23.7-24.8-42.1-48.5-48.4C458.1 64 288 64 288 64s-170.1 0-213.2 11.7c-23.7 6.3-42.2 24.7-48.5 48.4C16.6 167.2 16.6 256 16.6 256s0 88.8 9.7 131.9c6.3 23.7 24.8 42.1 48.5 48.4C117.9 448 288 448 288 448s170.1 0 213.2-11.7c23.7-6.3 42.2-24.7 48.5-48.4 9.7-43.1 9.7-131.9 9.7-131.9s0-88.8-9.7-131.9zM232 334.8V177.2L367.5 256 232 334.8z"/>
                 </svg>
             </a>
 
-            <!-- WhatsApp SVG (noir) -->
+            <!-- WhatsApp (blanc — version correcte et complète) -->
             <a href="#" target="_blank">
                 <svg viewBox="0 0 448 512">
-                    <path d="M380.9 97.1C339-5.8 251.5 0 224 0 196.5 0 108.1-5.8 67.1 97.1-41.4 255.5 63.2 385 63.2 385L32 480l98.2-30.8c40.7 11.3 81.8 6.8 121.5-13.1 39.8-19.9 70.8-51 90.7-90.8 19.9-39.7 24.4-80.8 13.2-121.4L380.9 97.1zM224 438c-33.4 0-66-8.8-94.5-25.4l-6.7-4-57 17.8 18.3-55.3-4.4-6.8C69.3 336.7 60 301.8 60 266c0-90.6 73.4-164 164-164 91.6 0 165 73.4 165 164C389 364.6 315.6 438 224 438zm90.5-138.6c-4.9-2.5-29-14.3-33.5-15.9-4.5-1.7-7.8-2.5-11.1 2.5s-12.7 15.9-15.6 19.2c-2.9 3.3-5.8 3.7-10.7 1.2-29.1-14.5-48.2-25.8-67.1-58.1-5.1-8.8 5.1-8.2 14.5-27.3 1.6-3.3.8-6.2-.4-8.7-1.2-2.5-11.1-26.8-15.2-36.8-4-9.6-8.1-8.3-11.1-8.5-2.9-.2-6.2-.2-9.5-.2s-8.7 1.2-13.3 6.2c-4.6 5-17.5 17.1-17.5 41.6s17.9 48.3 20.4 51.6c2.5 3.3 34.9 53.3 84.5 74.8 11.8 5.1 21 8.2 28.2 10.5 11.8 3.8 22.5 3.3 31-2s18.8-18.2 23.9-25.4c5.1-7.1 7.6-12.5 4.9-15-2.6-2.5-10.2-6.2-15.1-8.7z"/>
+                    <path d="M224 32C100.3 32 0 132.3 0 256c0 45.8 12.3 89.2 35.7 127.5L2.4 480l99.7-32.6C140.6 463.4 181.7 480 224 480c123.7 0 224-100.3 224-224S347.7 32 224 32zm124.5 289.1c-5.2 14.6-30.2 28-41.9 29.7-10.7 1.6-24.2 2.2-39.1-2.4-9-2.8-20.5-6.7-35.4-13.1-62.4-27-103-89.9-106.4-94.1-3.1-4.2-25.4-33.8-25.4-64.5 0-30.7 16.1-45.8 21.8-52.1 5.7-6.3 12.5-7.9 16.6-7.9 4.2 0 8.3 0 11.9.2 3.8.2 8.9-.7 13.9 10.6 5.2 12.7 17.7 43.8 19.3 47.1 1.6 3.3 2.6 7.1.5 11.3s-3.1 7-6.2 11.1c-3.1 4.2-6.6 9.5-2.8 15.5 3.8 6.3 16.8 27.6 36.2 45.6 24.9 23.2 45.7 30.4 55.3 33.6 5.7 1.8 12.6 1.4 16.8-.9s26-12.1 29.7-23.8c3.8-11.7 3.8-21.7 2.6-23.8s-5.7-3.8-11.9-6.6z"/>
                 </svg>
             </a>
 
@@ -203,7 +220,7 @@
             <a href="contact.html">Me contacter</a>
         </div>
 
-        <div style="margin-top: 10px;">
+        <div style="margin-top: 12px;">
             © 2026 Mon-Univers.ca — Tous droits réservés
         </div>
 
