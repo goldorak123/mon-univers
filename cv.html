@@ -34,26 +34,63 @@ body {
     font-size: 14px;
     transition: 0.3s;
 }
-
 .back-btn:hover {
     background: #ffdf9e;
     color: black;
 }
 
 /* ---------------------------------------------------
-   IMAGE DU CV
+   IMAGE DU CV (CLIC = POPUP)
 --------------------------------------------------- */
 .cv-container {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 70px; /* réduit pour éviter débordement impression */
+    margin-top: 70px;
 }
 .cv-image {
     width: 70%;
     max-width: 900px;
     border-radius: 10px;
     box-shadow: 0px 0px 35px black;
+    cursor: zoom-in;
+    transition: 0.3s;
+}
+.cv-image:hover {
+    transform: scale(1.02);
+}
+
+/* ---------------------------------------------------
+   POP-UP FULLSCREEN
+--------------------------------------------------- */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.popup-image {
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 12px;
+    box-shadow: 0 0 40px black;
+}
+
+.close-popup {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 /* ---------------------------------------------------
@@ -105,7 +142,7 @@ body {
 }
 
 /* ---------------------------------------------------
-   MODE IMPRESSION — VERSION PARFAITE 1 PAGE LETTER
+   MODE IMPRESSION — PARFAIT 1 PAGE LETTER
 --------------------------------------------------- */
 @media print {
 
@@ -124,14 +161,13 @@ body {
         print-color-adjust: exact !important;
     }
 
-    /* Masquer les éléments inutiles */
     .back-btn,
     .footer,
-    .print-btn {
+    .print-btn,
+    .popup-overlay {
         display: none !important;
     }
 
-    /* Réinitialiser le conteneur */
     .cv-container {
         margin: 0 !important;
         padding: 0 !important;
@@ -139,7 +175,6 @@ body {
         display: block;
     }
 
-    /* L'image occupe TOUTE la page sans débordement */
     .cv-image {
         width: 100vw !important;
         height: 100vh !important;
@@ -158,12 +193,20 @@ body {
 
 <a href="index.html" class="back-btn">← Retour</a>
 
+<!-- IMAGE + POP-UP -->
 <div class="cv-container">
-    <img src="CV_daniel.jpg" alt="Curriculum Vitae" class="cv-image">
+    <img src="CV_daniel.jpg" alt="Curriculum Vitae" class="cv-image" onclick="openPopup()">
+</div>
+
+<!-- POP-UP -->
+<div class="popup-overlay" id="popup">
+    <span class="close-popup" onclick="closePopup()">×</span>
+    <img src="CV_daniel.jpg" class="popup-image">
 </div>
 
 <button class="print-btn" onclick="window.print()">Imprimer</button>
 
+<!-- FOOTER -->
 <div class="footer">
 
     <div>
@@ -186,6 +229,15 @@ body {
     </div>
 
 </div>
+
+<script>
+function openPopup() {
+    document.getElementById("popup").style.display = "flex";
+}
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
 
 </body>
 </html>
