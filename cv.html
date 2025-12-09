@@ -1,100 +1,188 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Mon C.V.</title>
 
 <style>
-    :root {
-        --gold: #F7D48A;
-        --text-dark: #0A0A0A;
-    }
+/* ---------------------------------------------------
+   FOND DE PAGE
+--------------------------------------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url("cv-background.png") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
 
-    body {
+/* ---------------------------------------------------
+   BOUTON RETOUR
+--------------------------------------------------- */
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: #ffdf9e;
+    padding: 10px 25px;
+    border: 2px solid #ffdf9e;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+.back-btn:hover {
+    background: #ffdf9e;
+    color: black;
+}
+
+/* ---------------------------------------------------
+   IMAGE DU CV
+--------------------------------------------------- */
+.cv-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px; /* réduit pour éviter débordement impression */
+}
+.cv-image {
+    width: 70%;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 35px black;
+}
+
+/* ---------------------------------------------------
+   BOUTON IMPRIMER
+--------------------------------------------------- */
+.print-btn {
+    margin-top: 30px;
+    display: inline-block;
+    background-color: rgba(0,0,0,0.6);
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: 2px solid #ffdf9e;
+    color: #ffdf9e;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.print-btn:hover {
+    background-color: #ffdf9e;
+    color: black;
+}
+
+/* ---------------------------------------------------
+   FOOTER
+--------------------------------------------------- */
+.footer {
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    padding: 25px 0;
+    margin-top: 60px;
+}
+
+.footer a {
+    color: #ffdf9e;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+.icon-youtube,
+.icon-whatsapp {
+    width: 28px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.footer img {
+    filter: invert(1);
+}
+
+/* ---------------------------------------------------
+   MODE IMPRESSION — VERSION PARFAITE 1 PAGE LETTER
+--------------------------------------------------- */
+@media print {
+
+    @page {
+        size: Letter portrait;
         margin: 0;
-        padding: 0;
-        background: url("FOND-NEBULEUSE-UNIVERSDANIEL.jpg") no-repeat center center fixed;
-        background-size: cover;
-        font-family: Arial, sans-serif;
-        color: white;
-        overflow-x: hidden;
     }
 
-    /* Bouton Retour */
-    .btn-retour {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        padding: 10px 20px;
-        border: 1px solid var(--gold);
-        border-radius: 50px;
-        text-decoration: none;
-        font-size: 0.95rem;
-        font-weight: bold;
-        color: var(--gold);
-        background: rgba(5, 3, 20, 0.4);
-        backdrop-filter: blur(6px);
-        transition: 0.25s;
-        z-index: 999;
-    }
-    .btn-retour:hover {
-        background: var(--gold);
-        color: var(--text-dark);
-        box-shadow: 0 0 12px rgba(247,212,138,0.55);
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 100%;
+        overflow: hidden;
+        background: white !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
-    /* Conteneur principal */
-    .contenu {
-        max-width: 900px;
-        margin: 120px auto 80px;
-        text-align: center;
-        padding: 20px;
+    /* Masquer les éléments inutiles */
+    .back-btn,
+    .footer,
+    .print-btn {
+        display: none !important;
     }
 
-    /* Image du CV (non floutée) */
+    /* Réinitialiser le conteneur */
+    .cv-container {
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 100%;
+        display: block;
+    }
+
+    /* L'image occupe TOUTE la page sans débordement */
     .cv-image {
-        width: 100%;
-        max-width: 800px;
-        border-radius: 12px;
-        margin-bottom: 40px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.6);
+        width: 100vw !important;
+        height: 100vh !important;
+        object-fit: contain !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        page-break-after: avoid;
     }
-
-    /* Bouton Imprimer */
-    .btn {
-        display: inline-block;
-        padding: 14px 32px;
-        background: rgba(5, 3, 20, 0.55);
-        border: 1px solid var(--gold);
-        border-radius: 50px;
-        color: var(--gold);
-        text-decoration: none;
-        font-weight: bold;
-        backdrop-filter: blur(6px);
-        transition: 0.25s;
-        font-size: 1.1rem;
-    }
-    .btn:hover {
-        background: var(--gold);
-        color: #0A0A0A;
-        box-shadow: 0 0 14px rgba(247,212,138,0.55);
-    }
-
+}
 </style>
 </head>
 
 <body>
 
-<a href="index.html" class="btn-retour">← Retour</a>
+<a href="index.html" class="back-btn">← Retour</a>
 
-<div class="contenu">
+<div class="cv-container">
+    <img src="CV_daniel.jpg" alt="Curriculum Vitae" class="cv-image">
+</div>
 
-    <!-- Ton CV affiché net -->
-    <img src="CV_daniel.jpg" class="cv-image" alt="CV de Daniel L'Heureux">
+<button class="print-btn" onclick="window.print()">Imprimer</button>
 
-    <!-- Bouton imprimer -->
-    <button class="btn" onclick="window.open('CV_daniel.pdf')">Imprimer</button>
+<div class="footer">
+
+    <div>
+        <a href="https://youtube.com" target="_blank">
+            <img class="icon-youtube" src="youtube.png" /> YouTube
+        </a>
+
+        <a href="https://wa.me/1" target="_blank">
+            <img class="icon-whatsapp" src="whatsapp.png" /> WhatsApp
+        </a>
+    </div>
+
+    <div style="margin-top:10px;">
+        <a href="a-propos.html">À propos</a> |
+        <a href="contact.html">Me contacter</a>
+    </div>
+
+    <div style="margin-top:10px; color:#ffdf9e;">
+        © 2026 Mon-Univers.ca — Tous droits réservés
+    </div>
 
 </div>
 
