@@ -20,60 +20,47 @@ body {
 }
 
 /* ---------------------------------------------------
-   BOUTON RETOUR & IMPRIMER (STYLE IDENTIQUE)
+   BOUTON RETOUR
 --------------------------------------------------- */
-.back-btn,
-.print-btn {
+.back-btn {
     position: fixed;
+    top: 10px;
+    left: 10px;
     color: #ffdf9e;
     padding: 6px 14px;
     border: 1.5px solid #ffdf9e;
     border-radius: 30px;
     text-decoration: none;
     font-size: 14px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.45);
     transition: 0.3s;
-    cursor: pointer;
+    z-index: 9999;
 }
-
-.back-btn {
-    top: 10px;
-    left: 10px;
-}
-
-.print-btn {
-    bottom: 110px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.back-btn:hover,
-.print-btn:hover {
+.back-btn:hover {
     background: #ffdf9e;
     color: black;
 }
 
 /* ---------------------------------------------------
-   IMAGE DU CV (CENTRÉE + PLUS BAS)
+   IMAGE DU CV
 --------------------------------------------------- */
 .cv-container {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 120px; /* DESCENTE ICI */
+    margin-top: 45px; /* ✅ REMONTÉ */
 }
 
 .cv-image {
-    width: 70%;
-    max-width: 900px;
+    width: 72%;
+    max-width: 880px;
     border-radius: 10px;
     box-shadow: 0px 0px 35px black;
     cursor: zoom-in;
     transition: 0.3s;
 }
-
 .cv-image:hover {
-    transform: scale(1.02);
+    transform: scale(1.015);
 }
 
 /* ---------------------------------------------------
@@ -81,10 +68,7 @@ body {
 --------------------------------------------------- */
 .popup-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    inset: 0;
     background: rgba(0,0,0,0.9);
     display: none;
     justify-content: center;
@@ -110,27 +94,46 @@ body {
 }
 
 /* ---------------------------------------------------
+   BOUTON IMPRIMER (ALIGNÉ AU RETOUR)
+--------------------------------------------------- */
+.print-btn {
+    margin-top: 22px;
+    padding: 6px 16px;
+    border-radius: 30px;
+    border: 1.5px solid #ffdf9e;
+    background: rgba(0,0,0,0.45);
+    color: #ffdf9e;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.print-btn:hover {
+    background: #ffdf9e;
+    color: black;
+}
+
+/* ---------------------------------------------------
    FOOTER
 --------------------------------------------------- */
 .footer {
     width: 100%;
     background: rgba(0,0,0,0.7);
-    padding: 25px 0;
-    margin-top: 80px;
+    padding: 20px 0;
+    margin-top: 50px;
 }
 
 .footer a {
     color: #ffdf9e;
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
+    margin: 0 12px;
+    font-size: 16px;
 }
 
 .icon-youtube,
 .icon-whatsapp {
-    width: 28px;
+    width: 24px;
     vertical-align: middle;
-    margin-right: 8px;
+    margin-right: 6px;
 }
 
 .footer img {
@@ -138,7 +141,25 @@ body {
 }
 
 /* ---------------------------------------------------
-   MODE IMPRESSION — 1 PAGE PARFAITE
+   MOBILE
+--------------------------------------------------- */
+@media (max-width: 768px) {
+
+    .cv-container {
+        margin-top: 35px; /* ✅ ENCORE UN PEU PLUS HAUT */
+    }
+
+    .cv-image {
+        width: 86%;
+    }
+
+    .print-btn {
+        margin-top: 18px;
+    }
+}
+
+/* ---------------------------------------------------
+   MODE IMPRESSION
 --------------------------------------------------- */
 @media print {
 
@@ -158,15 +179,14 @@ body {
     }
 
     .back-btn,
-    .print-btn,
     .footer,
+    .print-btn,
     .popup-overlay {
         display: none !important;
     }
 
     .cv-container {
         margin: 0 !important;
-        padding: 0 !important;
         height: 100%;
         display: block;
     }
@@ -175,8 +195,6 @@ body {
         width: 100vw !important;
         height: 100vh !important;
         object-fit: contain !important;
-        margin: 0 !important;
-        padding: 0 !important;
         border-radius: 0 !important;
         box-shadow: none !important;
     }
@@ -188,12 +206,10 @@ body {
 
 <a href="index.html" class="back-btn">← Retour</a>
 
-<!-- IMAGE DU CV -->
 <div class="cv-container">
     <img src="CV_daniel.jpg" alt="Curriculum Vitae" class="cv-image" onclick="openPopup()">
 </div>
 
-<!-- POP-UP -->
 <div class="popup-overlay" id="popup">
     <span class="close-popup" onclick="closePopup()">×</span>
     <img src="CV_daniel.jpg" class="popup-image">
@@ -201,7 +217,6 @@ body {
 
 <button class="print-btn" onclick="window.print()">Imprimer</button>
 
-<!-- FOOTER -->
 <div class="footer">
 
     <div>
