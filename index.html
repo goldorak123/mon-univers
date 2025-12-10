@@ -32,10 +32,6 @@
             z-index: 9999;
         }
 
-        .top-menu {
-            display: none;
-        }
-
         /* ===== CONTENU CENTRAL ===== */
         .main-content {
             margin-top: 120px;
@@ -47,7 +43,7 @@
         }
 
         h1 {
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             font-size: 28px;
             font-weight: bold;
             color: #ffd700;
@@ -69,9 +65,7 @@
             align-items: center;
             width: 100%;
             max-width: 900px;
-            background: none;
-            padding: 0;
-            margin-top: 80px;
+            margin-top: 70px;
         }
 
         .btn {
@@ -128,26 +122,27 @@
             }
 
             .main-content {
-                margin-top: 60px;
+                margin-top: 40px; /* ✅ bloc remonté */
             }
 
             h1 {
-                margin-bottom: 25px;
-                font-size: 26px;
+                margin-bottom: 22px;
+                font-size: 24px;
             }
 
             .titre-grand {
-                font-size: 42px;
+                font-size: 38px;
             }
 
             .btn-container {
-                flex-direction: column;
-                max-width: 100%;
+                margin-top: 35px; /* ✅ boutons plus hauts */
+                gap: 14px;
             }
 
             .btn {
-                width: 55%;
-                font-size: 18px;
+                width: 65%;          /* ✅ moins large */
+                padding: 10px 0;     /* ✅ moins haut */
+                font-size: 16px;     /* ✅ texte plus fin */
             }
 
             footer {
@@ -162,6 +157,7 @@
 
     </style>
 </head>
+
 <body>
 
     <!-- LOGO -->
@@ -190,15 +186,13 @@
     <footer>
 
         <div class="footer-icons">
-
             <a href="https://youtube.com" target="_blank">
-                <img src="youtube.png" class="icon-youtube"> YouTube
+                <img src="youtube.png"> YouTube
             </a>
 
             <a href="https://wa.me/1" target="_blank">
-                <img src="whatsapp.png" class="icon-whatsapp"> WhatsApp
+                <img src="whatsapp.png"> WhatsApp
             </a>
-
         </div>
 
         <div>
