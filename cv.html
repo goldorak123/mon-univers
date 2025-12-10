@@ -20,34 +20,49 @@ body {
 }
 
 /* ---------------------------------------------------
-   BOUTON RETOUR
+   BOUTON RETOUR & IMPRIMER (STYLE IDENTIQUE)
 --------------------------------------------------- */
-.back-btn {
+.back-btn,
+.print-btn {
     position: fixed;
-    top: 10px;
-    left: 10px;
     color: #ffdf9e;
     padding: 6px 14px;
     border: 1.5px solid #ffdf9e;
     border-radius: 30px;
     text-decoration: none;
     font-size: 14px;
+    background: rgba(0,0,0,0.5);
     transition: 0.3s;
+    cursor: pointer;
 }
-.back-btn:hover {
+
+.back-btn {
+    top: 10px;
+    left: 10px;
+}
+
+.print-btn {
+    bottom: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.back-btn:hover,
+.print-btn:hover {
     background: #ffdf9e;
     color: black;
 }
 
 /* ---------------------------------------------------
-   IMAGE DU CV (CLIC = POPUP)
+   IMAGE DU CV (CENTRÉE + PLUS BAS)
 --------------------------------------------------- */
 .cv-container {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 70px;
+    margin-top: 120px; /* DESCENTE ICI */
 }
+
 .cv-image {
     width: 70%;
     max-width: 900px;
@@ -56,6 +71,7 @@ body {
     cursor: zoom-in;
     transition: 0.3s;
 }
+
 .cv-image:hover {
     transform: scale(1.02);
 }
@@ -94,33 +110,13 @@ body {
 }
 
 /* ---------------------------------------------------
-   BOUTON IMPRIMER
---------------------------------------------------- */
-.print-btn {
-    margin-top: 30px;
-    display: inline-block;
-    background-color: rgba(0,0,0,0.6);
-    padding: 12px 25px;
-    border-radius: 25px;
-    border: 2px solid #ffdf9e;
-    color: #ffdf9e;
-    font-size: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.print-btn:hover {
-    background-color: #ffdf9e;
-    color: black;
-}
-
-/* ---------------------------------------------------
    FOOTER
 --------------------------------------------------- */
 .footer {
     width: 100%;
     background: rgba(0,0,0,0.7);
     padding: 25px 0;
-    margin-top: 60px;
+    margin-top: 80px;
 }
 
 .footer a {
@@ -142,7 +138,7 @@ body {
 }
 
 /* ---------------------------------------------------
-   MODE IMPRESSION — PARFAIT 1 PAGE LETTER
+   MODE IMPRESSION — 1 PAGE PARFAITE
 --------------------------------------------------- */
 @media print {
 
@@ -162,8 +158,8 @@ body {
     }
 
     .back-btn,
-    .footer,
     .print-btn,
+    .footer,
     .popup-overlay {
         display: none !important;
     }
@@ -183,7 +179,6 @@ body {
         padding: 0 !important;
         border-radius: 0 !important;
         box-shadow: none !important;
-        page-break-after: avoid;
     }
 }
 </style>
@@ -193,7 +188,7 @@ body {
 
 <a href="index.html" class="back-btn">← Retour</a>
 
-<!-- IMAGE + POP-UP -->
+<!-- IMAGE DU CV -->
 <div class="cv-container">
     <img src="CV_daniel.jpg" alt="Curriculum Vitae" class="cv-image" onclick="openPopup()">
 </div>
@@ -211,11 +206,11 @@ body {
 
     <div>
         <a href="https://youtube.com" target="_blank">
-            <img class="icon-youtube" src="youtube.png" /> YouTube
+            <img class="icon-youtube" src="youtube.png"> YouTube
         </a>
 
         <a href="https://wa.me/1" target="_blank">
-            <img class="icon-whatsapp" src="whatsapp.png" /> WhatsApp
+            <img class="icon-whatsapp" src="whatsapp.png"> WhatsApp
         </a>
     </div>
 
