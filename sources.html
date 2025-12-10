@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mes sources de réflexion — Mon-Univers.ca</title>
+
+<style>
+
+/* ==============================
+   RESET + BASE
+============================== */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #2a2a2a;
+    background:
+        linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
+        url("fond-parchemin-inspirations.png");
+    background-repeat: repeat;
+    background-position: top center;
+    background-size: 1200px auto;
+}
+
+/* ==============================
+   BOUTON RETOUR
+============================== */
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: #ffd700;
+    padding: 10px 24px;
+    border: 2px solid #ffd700;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 18px;
+    background: rgba(0,0,0,0.45);
+    z-index: 1000;
+}
+
+/* ==============================
+   TEXTE INTRO (SCROLL NORMAL)
+============================== */
+.intro {
+    max-width: 1200px;
+    margin: 140px auto 100px;
+    padding: 0 30px;
+
+    font-size: 34px;
+    line-height: 1.7;
+    font-weight: 600;
+
+    color: rgba(35,25,15,0.95);
+    text-align: center;
+    font-style: italic;
+
+    text-shadow:
+        0 2px 6px rgba(0,0,0,0.25);
+}
+
+
+/* ==============================
+   CONTENEUR SCRAPBOOK
+============================== */
+.scrapbook {
+    max-width: 1300px;
+    margin: 0 auto 120px;
+    position: relative;
+}
+
+/* ==============================
+   BLOC CROQUIS
+============================== */
+.croquis-block {
+    width: 420px;
+    margin: 160px auto;
+    position: relative;
+    transform: rotate(var(--angle));
+}
+
+/* PAPIER DÉCHIRÉ */
+.croquis-block img {
+    width: 100%;
+    display: block;
+    background: #fdfaf4;
+    padding: 22px;
+
+    clip-path: polygon(
+        3% 2%, 97% 1%, 99% 6%, 98% 94%,
+        95% 98%, 6% 97%, 2% 92%, 1% 8%
+    );
+
+    filter: contrast(1.03) brightness(1.02);
+
+    box-shadow:
+        0 14px 30px rgba(0,0,0,0.35),
+        inset 0 0 25px rgba(0,0,0,0.08);
+}
+
+/* OMBRE ORGANIQUE */
+.croquis-block::after {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    background: rgba(0,0,0,0.18);
+    filter: blur(18px);
+    z-index: -1;
+}
+
+/* PUNAISE */
+.croquis-block::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    background: radial-gradient(circle at 30% 30%, #ffb3b3, #b40000);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+/* ==============================
+   TEXTE SOUS CROQUIS
+============================== */
+.croquis-texte {
+    margin-top: 18px;
+    background: rgba(255,247,215,0.95);
+    padding: 14px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #3a2a14;
+    text-align: center;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+/* ==============================
+   FOOTER
+============================== */
+footer {
+    text-align: center;
+    font-size: 14px;
+    color: rgba(60,45,25,0.6);
+    margin-bottom: 40px;
+}
+
+/* ==============================
+   MOBILE
+============================== */
+@media (max-width: 768px) {
+    .intro {
+        font-size: 22px;
+        margin-top: 120px;
+    }
+    .croquis-block {
+        width: 88%;
+        margin: 120px auto;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="index.html" class="back-btn">← Retour</a>
+
+<div class="intro">
+Ce ne sont pas des idoles, mais des repères.<br>
+Des pensées croisées, des chemins ouverts,<br>
+qui ont accompagné ma manière<br>
+de penser, de douter et de regarder le monde.
+    
+</div>
+
+<div class="scrapbook">
+
+    <div class="croquis-block" style="--angle:-3deg;">
+        <img src="croquis-einstein.png">
+        <div class="croquis-texte">
+            Physicien théoricien — Relativité restreinte et générale<br>
+            Prix Nobel de physique 1921
+        </div>
+    </div>
+
+    <div class="croquis-block" style="--angle:4deg;">
+        <img src="croquis-etienne-klein.png">
+        <div class="croquis-texte">
+            Physicien et philosophe des sciences<br>
+            Vulgarisation et réflexion sur le temps
+        </div>
+    </div>
+
+    <div class="croquis-block" style="--angle:-6deg;">
+        <img src="croquis-cedric-villani.png">
+        <div class="croquis-texte">
+            Mathématicien — Médaille Fields 2010
+        </div>
+    </div>
+
+    <div class="croquis-block" style="--angle:3deg;">
+        <img src="croquis-alain-aspect.png">
+        <div class="croquis-texte">
+            Physicien expérimental — Prix Nobel de physique 2022
+        </div>
+    </div>
+
+    <div class="croquis-block" style="--angle:-2deg;">
+        <img src="croquis-hubert-reeves.png">
+        <div class="croquis-texte">
+            Astrophysicien et vulgarisateur scientifique
+        </div>
+    </div>
+
+    <div class="croquis-block" style="--angle:5deg;">
+        <img src="croquis-stephen-hawking.png">
+        <div class="croquis-texte">
+            Physicien théoricien et cosmologiste
+        </div>
+    </div>
+
+    <div class="croquis-block" style="--angle:-4deg;">
+        <img src="citation-john-lennon.png">
+    </div>
+
+    <div class="croquis-block" style="--angle:6deg;">
+        <img src="citation-john-f-kennedy.png">
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Mon-Univers.ca — Tous droits réservés
+</footer>
+
+</body>
+</html>

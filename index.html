@@ -60,21 +60,22 @@
             color: #ffd700;
         }
 
-        /* ===== BOUTONS ===== */
+        /* ===== BOUTONS (WEB) ===== */
         .btn-container {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             gap: 18px;
+            justify-content: center;
             align-items: center;
             width: 100%;
-            max-width: 450px;
+            max-width: 900px;
             background: none;
             padding: 0;
-            margin-top: -20px;
+            margin-top: 80px;
         }
 
         .btn {
-            width: 280px;
+            width: 260px;
             padding: 14px;
             border-radius: 40px;
             border: 2px solid #ffd700;
@@ -119,6 +120,7 @@
             margin-right: 6px;
         }
 
+        /* ===== MOBILE ===== */
         @media(max-width: 768px) {
 
             .logo {
@@ -136,6 +138,11 @@
 
             .titre-grand {
                 font-size: 42px;
+            }
+
+            .btn-container {
+                flex-direction: column;
+                max-width: 100%;
             }
 
             .btn {
@@ -174,6 +181,7 @@
             <a class="btn" href="livre.html">Mon livre</a>
             <a class="btn" href="galerie.html">Ma galerie</a>
             <a class="btn" href="entreprise.html">Mon entreprise</a>
+            <a class="btn" href="sources.html">Mes sources de réflexion</a>
         </div>
 
     </div>
