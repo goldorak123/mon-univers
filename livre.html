@@ -20,7 +20,7 @@
             text-align: center;
         }
 
-        /* Bouton retour (visible en version web seulement) */
+        /* --- Bouton retour (visible sur desktop seulement) --- */
         .btn-retour {
             position: fixed;
             top: 20px;
@@ -64,6 +64,7 @@
             margin-bottom: 30px;
         }
 
+        /* --- Couverture + zoom --- */
         .book-cover {
             width: 260px;
             max-width: 90%;
@@ -130,9 +131,11 @@
         /* ----------- VERSION MOBILE ------------ */
         @media(max-width: 768px) {
 
-            /* 🔥 Bouton retour 100% invisible sur mobile */
+            /* 🚫 Bouton retour automatiquement invisible sur mobile */
             .btn-retour {
                 display: none !important;
+                opacity: 0 !important;
+                pointer-events: none !important;
             }
 
             body {
@@ -164,8 +167,6 @@
             .cta {
                 width: 90%;
                 display: block;
-                margin-left: auto;
-                margin-right: auto;
                 font-size: 17px;
             }
         }

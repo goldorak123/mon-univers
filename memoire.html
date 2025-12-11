@@ -138,12 +138,14 @@
             box-shadow: 0 0 12px rgba(255,255,255,0.7);
         }
 
-        /* ---------- VERSION MOBILE – CORRIGÉE ---------- */
+        /* ---------- VERSION MOBILE – 100% FIX ---------- */
         @media (max-width: 768px) {
 
-            /* 🔥 Cette fois il disparaît VRAIMENT */
+            /* 🚫 Disparition totale du bouton retour */
             .btn-retour {
                 display: none !important;
+                opacity: 0 !important;
+                pointer-events: none !important;
             }
 
             body {

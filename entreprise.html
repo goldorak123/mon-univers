@@ -19,7 +19,7 @@
         text-align: center;
     }
 
-    /* Bouton retour — style universel */
+    /* Bouton retour — version desktop */
     .btn-retour {
         position: fixed;
         top: 20px;
@@ -42,10 +42,46 @@
         box-shadow: 0 0 12px rgba(247,212,138,0.55);
     }
 
+    /* TITRE */
+    h1 {
+        color: var(--gold);
+        margin-top: 80px;
+        margin-bottom: 20px;
+        font-size: 32px;
+    }
+
+    /* SECTION */
+    .section {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    /* IMAGES ENTREPRISE */
+    .entreprise-img {
+        width: 80%;
+        max-width: 800px;
+        border: 2px solid #ffffff33;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+        transition: transform 0.25s;
+    }
+    .entreprise-img:hover {
+        transform: scale(1.02);
+    }
+
+    /* TEXTE */
+    p {
+        font-size: 18px;
+        color: #ddd;
+        line-height: 1.6;
+        margin-bottom: 40px;
+    }
+
     /* ----------- MODE MOBILE ------------ */
     @media (max-width: 768px) {
 
-        /* 🔥 CACHER LE BOUTON RETOUR SUR MOBILE — VERSION 100% FIABLE */
+        /* 🔥 CACHER LE BOUTON RETOUR SUR MOBILE */
         .btn-retour {
             display: none !important;
             visibility: hidden !important;
@@ -78,7 +114,6 @@
         }
     }
 </style>
-
 
 </head>
 
