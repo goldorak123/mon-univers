@@ -47,28 +47,26 @@ body {
 }
 
 /* ==============================
-   TEXTE INTRO (SCROLL NORMAL)
+   TEXTE INTRO
 ============================== */
 .intro {
     max-width: 1200px;
     margin: 140px auto 100px;
     padding: 0 30px;
 
-    font-size: 42px;                 /* ← plus grand */
+    font-size: 42px;
     line-height: 1.6;
-    font-weight: 700;                /* ← un peu plus épais */
+    font-weight: 700;
     font-style: italic;
 
-    color: rgb(20, 20, 20);          /* ← plus foncé mais reste doux */
+    color: rgb(20, 20, 20);
 
     text-align: center;
 
     text-shadow:
-        0 3px 8px rgba(0,0,0,0.35),   /* ← ombre renforcée */
-        0 0 12px rgba(0,0,0,0.25);    /* ← halo léger pour contraster */
+        0 3px 8px rgba(0,0,0,0.35),
+        0 0 12px rgba(0,0,0,0.25);
 }
-
-
 
 /* ==============================
    CONTENEUR SCRAPBOOK
@@ -162,10 +160,21 @@ footer {
    MOBILE
 ============================== */
 @media (max-width: 768px) {
+
+    /* 🔥 CACHER BOUTON RETOUR SUR MOBILE */
+    .back-btn {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+    }
+
     .intro {
         font-size: 22px;
         margin-top: 120px;
     }
+
     .croquis-block {
         width: 88%;
         margin: 120px auto;
@@ -184,7 +193,6 @@ Ce ne sont pas des idoles, mais des repères.<br>
 Des pensées croisées, des chemins ouverts,<br>
 qui ont accompagné ma manière<br>
 de penser, de douter et de regarder le monde.
-    
 </div>
 
 <div class="scrapbook">

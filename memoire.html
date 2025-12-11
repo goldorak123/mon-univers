@@ -18,7 +18,7 @@
             background-size: cover;
             padding: 40px 20px;
             text-align: center;
-            overflow-x: hidden; /* empêche débordement */
+            overflow-x: hidden;
         }
 
         /* Bouton retour */
@@ -84,7 +84,7 @@
             gap: 15px;
             margin: 30px auto;
             max-width: 1200px;
-            overflow-x: hidden; /* corrige scroll horizontal */
+            overflow-x: hidden;
         }
         .previews img {
             width: 100%;
@@ -148,6 +148,15 @@
         /* ---------- VERSION MOBILE ---------- */
         @media (max-width: 768px) {
 
+            /* 🔥 CACHER LE BOUTON RETOUR SUR MOBILE */
+            .btn-retour {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                height: 0 !important;
+                overflow: hidden !important;
+            }
+
             body {
                 padding: 20px 10px;
                 overflow-x: hidden;
@@ -166,21 +175,11 @@
                 font-size: 16px;
             }
 
-            /* Bouton retour adapté mobile */
-            .btn-retour {
-                left: 10px;
-                top: 10px;
-                padding: 8px 16px;
-                font-size: 0.85rem;
-            }
-
-            /* Galerie : 2 colonnes */
             .previews {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
 
-            /* Boutons PDF empilés */
             .action-buttons {
                 flex-direction: column;
                 align-items: center;
@@ -192,7 +191,6 @@
                 font-size: 17px;
             }
 
-            /* Image zoom mobile */
             #zoom-modal img {
                 width: 95%;
                 max-height: 90vh;
@@ -208,12 +206,10 @@
 
     <h1>Je vous présente mon mémoire de recherche de Baccalauréat</h1>
     
-    <!-- Couverture -->
     <img src="cover.jpg" class="cover" alt="Couverture du mémoire">
 
     <h1>Aperçu du mémoire</h1>
 
-    <!-- Aperçus -->
     <div class="previews">
         <img src="apercu1.jpg" alt="">
         <img src="apercu2.jpg" alt="">
@@ -225,13 +221,11 @@
         <img src="apercu8.jpg" alt="">
     </div>
 
-    <!-- Boutons -->
     <div class="action-buttons">
         <a class="button" href="memoire.pdf" target="_blank">Télécharger le PDF</a>
         <a class="button" href="memoire.pdf" target="_blank" onclick="window.print()">Imprimer le PDF</a>
     </div>
 
-    <!-- Modal -->
     <div id="zoom-modal" onclick="this.style.display='none'">
         <img id="zoom-img">
     </div>

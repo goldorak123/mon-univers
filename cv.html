@@ -48,7 +48,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 45px; /* ✅ REMONTÉ */
+    margin-top: 45px;
 }
 
 .cv-image {
@@ -94,7 +94,7 @@ body {
 }
 
 /* ---------------------------------------------------
-   BOUTON IMPRIMER (ALIGNÉ AU RETOUR)
+   BOUTON IMPRIMER
 --------------------------------------------------- */
 .print-btn {
     margin-top: 22px;
@@ -145,8 +145,17 @@ body {
 --------------------------------------------------- */
 @media (max-width: 768px) {
 
+    /* 🔥 CACHER BOUTON RETOUR SUR MOBILE */
+    .back-btn {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+    }
+
     .cv-container {
-        margin-top: 75px; /* ✅ ENCORE UN PEU PLUS HAUT */
+        margin-top: 75px;
     }
 
     .cv-image {
