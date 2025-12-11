@@ -21,7 +21,7 @@
             overflow-x: hidden;
         }
 
-        /* Bouton retour */
+        /* Bouton retour – affiché seulement en version web */
         .btn-retour {
             position: fixed;
             top: 20px;
@@ -83,9 +83,7 @@
             gap: 15px;
             margin: 30px auto;
             max-width: 1200px;
-            overflow-x: hidden;
         }
-
         .previews img {
             width: 100%;
             border-radius: 10px;
@@ -93,7 +91,6 @@
             transition: transform 0.25s;
             border: 2px solid #ffffff33;
         }
-
         .previews img:hover {
             transform: scale(1.04);
             border-color: var(--gold);
@@ -141,35 +138,16 @@
             box-shadow: 0 0 12px rgba(255,255,255,0.7);
         }
 
-        /* ---------- VERSION MOBILE ---------- */
+        /* ---------- VERSION MOBILE – CORRIGÉE ---------- */
         @media (max-width: 768px) {
 
-        @media (max-width: 768px) {
-    .btn-retour {
-        display: none !important;
-        position: absolute !important;
-        left: -9999px !important;
-    }
-}
-    
-            /* 🔥 CACHER LE BOUTON RETOUR SUR MOBILE — VERSION 100% FIABLE */
+            /* 🔥 Cette fois il disparaît VRAIMENT */
             .btn-retour {
                 display: none !important;
-                visibility: hidden !important;
-                opacity: 0 !important;
-                pointer-events: none !important;
-                position: static !important;
-                height: 0 !important;
-                width: 0 !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                border: none !important;
-                overflow: hidden !important;
             }
 
             body {
                 padding: 20px 10px;
-                overflow-x: hidden;
             }
 
             h1 {
@@ -192,7 +170,6 @@
 
             .action-buttons {
                 flex-direction: column;
-                align-items: center;
                 gap: 15px;
             }
 
@@ -214,20 +191,20 @@
     <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
 
     <h1>Je vous présente mon mémoire de recherche de Baccalauréat</h1>
-    
+
     <img src="cover.jpg" class="cover" alt="Couverture du mémoire">
 
     <h1>Aperçu du mémoire</h1>
 
     <div class="previews">
-        <img src="apercu1.jpg" alt="">
-        <img src="apercu2.jpg" alt="">
-        <img src="apercu3.jpg" alt="">
-        <img src="apercu4.jpg" alt="">
-        <img src="apercu5.jpg" alt="">
-        <img src="apercu6.jpg" alt="">
-        <img src="apercu7.jpg" alt="">
-        <img src="apercu8.jpg" alt="">
+        <img src="apercu1.jpg">
+        <img src="apercu2.jpg">
+        <img src="apercu3.jpg">
+        <img src="apercu4.jpg">
+        <img src="apercu5.jpg">
+        <img src="apercu6.jpg">
+        <img src="apercu7.jpg">
+        <img src="apercu8.jpg">
     </div>
 
     <div class="action-buttons">

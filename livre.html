@@ -20,7 +20,7 @@
             text-align: center;
         }
 
-        /* Bouton retour */
+        /* Bouton retour (visible en version web seulement) */
         .btn-retour {
             position: fixed;
             top: 20px;
@@ -37,6 +37,7 @@
             transition: 0.25s;
             z-index: 9999;
         }
+
         .btn-retour:hover {
             background: var(--gold);
             color: var(--text-dark);
@@ -63,7 +64,6 @@
             margin-bottom: 30px;
         }
 
-        /* COVER + ZOOM */
         .book-cover {
             width: 260px;
             max-width: 90%;
@@ -81,7 +81,6 @@
             transform: scale(1.03);
         }
 
-        /* MODAL ZOOM */
         #zoom-modal {
             position: fixed;
             inset: 0;
@@ -109,7 +108,6 @@
             line-height: 1.6;
         }
 
-        /* Bouton Acheter */
         .cta {
             display: inline-block;
             padding: 14px 26px;
@@ -131,25 +129,10 @@
 
         /* ----------- VERSION MOBILE ------------ */
         @media(max-width: 768px) {
-.btn-retour {
-    display: none !important;
-    position: absolute !important;
-    left: -9999px !important;
-}
 
-
-            /* 🔥 CACHER BOUTON RETOUR SUR MOBILE — VERSION 100% FIABLE */
+            /* 🔥 Bouton retour 100% invisible sur mobile */
             .btn-retour {
                 display: none !important;
-                visibility: hidden !important;
-                opacity: 0 !important;
-                pointer-events: none !important;
-                position: static !important;
-                height: 0 !important;
-                width: 0 !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                border: none !important;
             }
 
             body {
@@ -186,13 +169,11 @@
                 font-size: 17px;
             }
         }
-
     </style>
-
 </head>
+
 <body>
 
-    <!-- Bouton retour -->
     <a class="btn-retour" href="index.html">← Retour à l'accueil</a>
 
     <div class="container">
@@ -203,7 +184,6 @@
             et format papier sur Lulu.com uniquement.
         </p>
 
-        <!-- Image couverture avec zoom -->
         <img src="couverture-livre.jpg" class="book-cover" onclick="zoomImage(this)">
 
         <h2>Résumé :</h2>
@@ -215,7 +195,6 @@
         une unité profonde et une puissante synergie.
         </p>
 
-        <!-- Bouton Acheter -->
         <a class="cta"
            href="https://www.lulu.com/shop/daniel-lheureux/rencontres-au-clair-de-lune/ebook/product-1pkvn5q7.html"
            target="_blank">
@@ -224,12 +203,10 @@
 
     </div>
 
-    <!-- MODAL ZOOM -->
     <div id="zoom-modal" onclick="this.style.display='none'">
         <img id="zoom-img">
     </div>
 
-    <!-- SCRIPT ZOOM -->
     <script>
         function zoomImage(img) {
             document.getElementById("zoom-img").src = img.src;
