@@ -32,6 +32,110 @@
             z-index: 9999;
         }
 
+        /* ===== MARTIEN (Archy) ===== */
+        .alien-container {
+            position: fixed;
+            bottom: 40px;
+            left: 25px;
+            width: 160px;
+            height: 260px;
+            z-index: 99999;
+            pointer-events: none;
+            animation: alienFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes alienFloat {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0); }
+        }
+
+        .alien-body {
+            position: absolute;
+            bottom: 0;
+            width: 150px;
+        }
+
+        .alien-arm {
+            position: absolute;
+            bottom: 108px;
+            left: 85px;
+            width: 70px;
+            transform-origin: top left;
+            animation: armWave 1.8s ease-in-out infinite;
+        }
+
+        @keyframes armWave {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(20deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        .alien-eye {
+            position: absolute;
+            top: 10px;
+            left: 46px;
+            width: 60px;
+            opacity: 0;
+            animation: eyeBlink 4s infinite;
+        }
+
+        @keyframes eyeBlink {
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            20% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        /* ===== BULLE NÉON BLEUE ===== */
+        .alien-bubble {
+            position: absolute;
+            bottom: 200px;
+            left: 160px;
+            background: rgba(0, 40, 90, 0.65);
+            padding: 14px 20px;
+            border-radius: 14px;
+            max-width: 240px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #b8dfff;
+            border: 2px solid rgba(0, 180, 255, 0.9);
+            box-shadow:
+                0 0 10px rgba(0, 180, 255, 0.7),
+                0 0 20px rgba(0, 160, 255, 0.5),
+                0 0 30px rgba(0, 140, 255, 0.4);
+            opacity: 0;
+            transform: scale(0.7);
+        }
+
+        /* Arrow pointe bulle */
+        .alien-bubble::after {
+            content: "";
+            position: absolute;
+            bottom: -14px;
+            left: 12px;
+            border-width: 14px 12px 0 12px;
+            border-style: solid;
+            border-color: rgba(0, 180, 255, 0.9) transparent transparent transparent;
+            filter: drop-shadow(0 0 8px rgba(0,180,255,0.8));
+        }
+
+        @keyframes bubbleAppear {
+            0% { opacity: 0; transform: scale(0.7); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes bubblePulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.06); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes bubbleDisappear {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0.8); }
+        }
+
         /* ===== CONTENU CENTRAL ===== */
         .main-content {
             margin-top: 120px;
@@ -56,7 +160,7 @@
             color: #ffd700;
         }
 
-        /* ===== BOUTONS (WEB) ===== */
+        /* ===== BOUTONS ===== */
         .btn-container {
             display: flex;
             flex-wrap: wrap;
@@ -84,7 +188,7 @@
             background: rgba(255,255,255,0.25);
         }
 
-        /* ===== FOOTER ===== */
+        /* ===== FOOTER (CSS RESTAURÉ) ===== */
         footer {
             background: #000;
             color: white;
@@ -117,42 +221,24 @@
         /* ===== MOBILE ===== */
         @media(max-width: 768px) {
 
-            .logo {
-                display: none;
+            .logo { display: none; }
+
+            .main-content { margin-top: 40px; }
+
+            .alien-container {
+                width: 120px;
+                height: 180px;
+                bottom: 20px;
+                left: 10px;
             }
 
-            .main-content {
-                margin-top: 40px; /* ✅ bloc remonté */
+            .alien-bubble {
+                bottom: 140px;
+                left: 120px;
+                font-size: 14px;
+                max-width: 180px;
             }
 
-            h1 {
-                margin-bottom: 22px;
-                font-size: 24px;
-            }
-
-            .titre-grand {
-                font-size: 38px;
-            }
-
-            .btn-container {
-                margin-top: 35px; /* ✅ boutons plus hauts */
-                gap: 14px;
-            }
-
-            .btn {
-                width: 65%;          /* ✅ moins large */
-                padding: 10px 0;     /* ✅ moins haut */
-                font-size: 16px;     /* ✅ texte plus fin */
-            }
-
-            footer {
-                padding: 16px 5px;
-            }
-
-            .footer-icons img {
-                width: 22px;
-                margin-right: 5px;
-            }
         }
 
     </style>
@@ -163,6 +249,38 @@
     <!-- LOGO -->
     <img src="LOGO-UNIVERSDANIEL.png" class="logo">
 
+    <!-- ===== ARCHY ===== -->
+    <div class="alien-container">
+        <img src="alien-corps.png" class="alien-body">
+        <img src="alien-bras.png" class="alien-arm">
+        <img src="alien-oeil-ferme.png" class="alien-eye">
+
+        <div class="alien-bubble">
+            Salut, je suis Archy,<br>bonne visite dans mon univers !
+        </div>
+    </div>
+
+    <audio id="bubble-sound" src="notification-23441.mp3"></audio>
+
+    <script>
+        window.addEventListener('load', () => {
+            const bubble = document.querySelector('.alien-bubble');
+            const sound = document.getElementById('bubble-sound');
+
+            setTimeout(() => {
+                sound.volume = 0.25;
+                sound.play();
+                bubble.style.animation =
+                    "bubbleAppear 0.8s forwards, bubblePulse 2s ease-in-out infinite";
+            }, 2000);
+
+            setTimeout(() => {
+                bubble.style.animation = "bubbleDisappear 0.6s forwards";
+            }, 2000 + 5000);
+        });
+    </script>
+
+    <!-- ===== CONTENU ===== -->
     <div class="main-content">
 
         <h1>
@@ -170,7 +288,6 @@
             <span class="titre-grand">Mon-Univers.ca</span>
         </h1>
 
-        <!-- BOUTONS -->
         <div class="btn-container">
             <a class="btn" href="cv.html">Mon CV</a>
             <a class="btn" href="memoire.html">Mon mémoire</a>
