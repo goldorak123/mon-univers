@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon-Univers.ca</title>
 
     <style>
-
         body {
             margin: 0;
             padding: 0;
@@ -22,26 +22,30 @@
             text-align: center;
         }
 
-        /* ===== LOGO Web ===== */
+        /* ===== LOGO WEB ===== */
         .logo {
             position: absolute;
             top: 5px;
             left: 20px;
-            width: 360px; 
+            width: 360px;
             height: auto;
             z-index: 9999;
         }
 
-        /* ===== MARTIEN (Archy) ===== */
+        /* ===== ARCHY (WEB SEULEMENT) ===== */
         .alien-container {
             position: fixed;
-            bottom: 40px;
-            left: 25px;
+            bottom: 100px;
+            left: 40px;
             width: 160px;
-            height: 260px;
-            z-index: 99999;
+            z-index: 9999;
             pointer-events: none;
-            animation: alienFloat 4s ease-in-out infinite;
+            animation: alienFloat 5s ease-in-out infinite;
+        }
+
+        .alien-img {
+            width: 100%;
+            height: auto;
         }
 
         @keyframes alienFloat {
@@ -50,65 +54,30 @@
             100% { transform: translateY(0); }
         }
 
-        .alien-body {
-            position: absolute;
-            bottom: 0;
-            width: 150px;
-        }
+        /* ===== BULLE ===== */
+    .alien-bubble {
+    position: absolute;
+    bottom: 200px;
+    left: 130px;
+    background: rgba(0, 40, 90, 0.65);
+    padding: 20px 20px;
+    border-radius: 14px;
 
-        .alien-arm {
-            position: absolute;
-            bottom: 108px;
-            left: 85px;
-            width: 70px;
-            transform-origin: top left;
-            animation: armWave 1.8s ease-in-out infinite;
-        }
+    width: 300px;          /* ← ajoute ceci */
+    max-width: 300px;      /* ← augmente la largeur */
 
-        @keyframes armWave {
-            0% { transform: rotate(0deg); }
-            50% { transform: rotate(20deg); }
-            100% { transform: rotate(0deg); }
-        }
-
-        .alien-eye {
-            position: absolute;
-            top: 10px;
-            left: 46px;
-            width: 60px;
-            opacity: 0;
-            animation: eyeBlink 4s infinite;
-        }
-
-        @keyframes eyeBlink {
-            0% { opacity: 0; }
-            10% { opacity: 1; }
-            20% { opacity: 0; }
-            100% { opacity: 0; }
-        }
-
-        /* ===== BULLE NÉON BLEUE ===== */
-        .alien-bubble {
-            position: absolute;
-            bottom: 200px;
-            left: 160px;
-            background: rgba(0, 40, 90, 0.65);
-            padding: 14px 20px;
-            border-radius: 14px;
-            max-width: 240px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #b8dfff;
-            border: 2px solid rgba(0, 180, 255, 0.9);
-            box-shadow:
-                0 0 10px rgba(0, 180, 255, 0.7),
+    font-size: 18px;
+    font-weight: bold;
+    color: #b8dfff;
+    border: 2px solid rgba(0, 180, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 180, 255, 0.7),
                 0 0 20px rgba(0, 160, 255, 0.5),
                 0 0 30px rgba(0, 140, 255, 0.4);
-            opacity: 0;
-            transform: scale(0.7);
-        }
+    opacity: 0;
+    transform: scale(0.7);
+    z-index: 9999;
+}
 
-        /* Arrow pointe bulle */
         .alien-bubble::after {
             content: "";
             position: absolute;
@@ -177,7 +146,7 @@
             padding: 14px;
             border-radius: 40px;
             border: 2px solid #ffd700;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             font-size: 20px;
             text-decoration: none;
@@ -188,7 +157,7 @@
             background: rgba(255,255,255,0.25);
         }
 
-        /* ===== FOOTER (CSS RESTAURÉ) ===== */
+        /* ===== FOOTER ===== */
         footer {
             background: #000;
             color: white;
@@ -204,9 +173,7 @@
             font-weight: bold;
         }
 
-        footer a:hover {
-            opacity: 0.7;
-        }
+        footer a:hover { opacity: 0.7; }
 
         .footer-icons {
             margin-bottom: 8px;
@@ -220,27 +187,46 @@
 
         /* ===== MOBILE ===== */
         @media(max-width: 768px) {
+            .back-btn { display: none !important; }
 
             .logo { display: none; }
+            .alien-container { display: none !important; }
 
-            .main-content { margin-top: 40px; }
-
-            .alien-container {
-                width: 120px;
-                height: 180px;
-                bottom: 20px;
-                left: 10px;
+            .main-content {
+                margin-top: 50px;
+                padding: 0 18px;
             }
 
-            .alien-bubble {
-                bottom: 140px;
-                left: 120px;
-                font-size: 14px;
-                max-width: 180px;
+            h1 {
+                margin-bottom: 16px;
+                font-size: 22px;
+                line-height: 1.3;
             }
 
+            .titre-grand { font-size: 30px; }
+
+            .btn-container {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 12px;
+                margin-top: 25px;
+            }
+
+            .btn {
+                width: 80%;
+                max-width: 330px;
+                padding: 10px 0;
+                font-size: 16px;
+            }
+
+            footer { padding: 14px 6px; }
+
+            .footer-icons img {
+                width: 22px;
+                margin-right: 5px;
+            }
         }
-
     </style>
 </head>
 
@@ -249,14 +235,11 @@
     <!-- LOGO -->
     <img src="LOGO-UNIVERSDANIEL.png" class="logo">
 
-    <!-- ===== ARCHY ===== -->
+    <!-- ARCHY -->
     <div class="alien-container">
-        <img src="alien-corps.png" class="alien-body">
-        <img src="alien-bras.png" class="alien-arm">
-        <img src="alien-oeil-ferme.png" class="alien-eye">
-
+        <img src="alien-archy.png" class="alien-img" alt="Archy">
         <div class="alien-bubble">
-            Salut, je suis Archy,<br>bonne visite dans mon univers !
+            Salut, je suis Archy, bonne visite dans mon univers!
         </div>
     </div>
 
@@ -276,11 +259,11 @@
 
             setTimeout(() => {
                 bubble.style.animation = "bubbleDisappear 0.6s forwards";
-            }, 2000 + 5000);
+            }, 7000);
         });
     </script>
 
-    <!-- ===== CONTENU ===== -->
+    <!-- CONTENU CENTRAL -->
     <div class="main-content">
 
         <h1>
@@ -299,14 +282,12 @@
 
     </div>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- FOOTER -->
     <footer>
-
         <div class="footer-icons">
             <a href="https://youtube.com" target="_blank">
                 <img src="youtube.png"> YouTube
             </a>
-
             <a href="https://wa.me/1" target="_blank">
                 <img src="whatsapp.png"> WhatsApp
             </a>
@@ -320,7 +301,6 @@
         <div style="margin-top: 12px;">
             © 2026 Mon-Univers.ca — Tous droits réservés
         </div>
-
     </footer>
 
 </body>
