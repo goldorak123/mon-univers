@@ -77,7 +77,6 @@
             color: #ddd;
         }
 
-        /* Aperçus */
         .previews {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -86,6 +85,7 @@
             max-width: 1200px;
             overflow-x: hidden;
         }
+
         .previews img {
             width: 100%;
             border-radius: 10px;
@@ -93,12 +93,12 @@
             transition: transform 0.25s;
             border: 2px solid #ffffff33;
         }
+
         .previews img:hover {
             transform: scale(1.04);
             border-color: var(--gold);
         }
 
-        /* Modal image agrandie */
         #zoom-modal {
             position: fixed;
             inset: 0;
@@ -114,11 +114,7 @@
             border-radius: 12px;
             border: 2px solid var(--gold);
         }
-        #zoom-modal:active {
-            display: none;
-        }
 
-        /* Boutons PDF */
         .action-buttons {
             display: flex;
             justify-content: center;
@@ -148,12 +144,18 @@
         /* ---------- VERSION MOBILE ---------- */
         @media (max-width: 768px) {
 
-            /* 🔥 CACHER LE BOUTON RETOUR SUR MOBILE */
+            /* 🔥 CACHER LE BOUTON RETOUR SUR MOBILE — VERSION 100% FIABLE */
             .btn-retour {
                 display: none !important;
                 visibility: hidden !important;
                 opacity: 0 !important;
+                pointer-events: none !important;
+                position: static !important;
                 height: 0 !important;
+                width: 0 !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                border: none !important;
                 overflow: hidden !important;
             }
 
@@ -201,7 +203,6 @@
 </head>
 <body>
 
-    <!-- Bouton retour -->
     <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
 
     <h1>Je vous présente mon mémoire de recherche de Baccalauréat</h1>

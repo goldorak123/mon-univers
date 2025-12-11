@@ -132,13 +132,18 @@
         /* ----------- VERSION MOBILE ------------ */
         @media(max-width: 768px) {
 
-            /* 🔥 CACHER BOUTON RETOUR SUR MOBILE */
+            /* 🔥 CACHER BOUTON RETOUR SUR MOBILE — VERSION 100% FIABLE */
             .btn-retour {
                 display: none !important;
                 visibility: hidden !important;
                 opacity: 0 !important;
+                pointer-events: none !important;
+                position: static !important;
                 height: 0 !important;
-                overflow: hidden !important;
+                width: 0 !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                border: none !important;
             }
 
             body {
