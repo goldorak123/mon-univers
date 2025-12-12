@@ -115,38 +115,43 @@ footer {
 #zoom-modal {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0,0,0,0.92);
     display: none;
     z-index: 99999;
 }
 
-/* bloque le fond */
+/* bloquer le fond */
 body.modal-open {
     overflow: hidden;
 }
 
-/* conteneur scrollable */
+/* conteneur image */
 .zoom-content {
     position: absolute;
-    inset: 60px 40px 40px;
-    overflow-y: auto;
+    inset: 40px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    overflow: auto;
 }
 
+/* IMAGE ZOOM — CLÉ CONTRE LA DISTORSION */
 .zoom-content img {
     max-width: 100%;
+    max-height: 100%;
+    width: auto;
     height: auto;
+    object-fit: contain;
     border-radius: 12px;
     border: 2px solid var(--gold);
 }
 
-/* X rouge */
+/* bouton fermeture (DESKTOP SEULEMENT) */
 .close {
     position: fixed;
-    top: 20px;
-    right: 25px;
-    font-size: 38px;
+    top: 18px;
+    right: 22px;
+    font-size: 36px;
     font-weight: bold;
     color: red;
     cursor: pointer;
@@ -178,13 +183,13 @@ body.modal-open {
         width: 95%;
     }
 
+    /* plein écran image */
     .zoom-content {
-        inset: 80px 15px 30px;
+        inset: 15px;
     }
-}
-/* ===== MOBILE : cacher le X rouge du popup ===== */
-@media (max-width: 768px) {
-    .close-popup {
+
+    /* 🔥 SUPPRIMER LE X ROUGE SUR MOBILE */
+    .close {
         display: none !important;
     }
 }
@@ -200,8 +205,7 @@ body.modal-open {
     <img src="cover.jpg" class="cover" alt="Couverture du mémoire">
 
     <p>
-     
-     <br>Mémoire de recherche présenté à l’Université Laval.<br>
+        Mémoire de recherche présenté à l’Université Laval.<br>
         Thème : influence et achalandage – Sanctuaire de Sainte-Anne-de-Beaupré.
     </p>
 
@@ -223,8 +227,8 @@ body.modal-open {
 
     <footer>
         © 2026 <strong>Daniel L’Heureux</strong><br>
-        La consultation, l'impression, la reproduction et la modification à des fins personnelles, publiques et<br>
-        commerciales sont autorisées, à condition que le nom de l’auteur soit clairement mentionné.<br>
+        La consultation, l'impression et la reproduction sont autorisées à condition
+        que le nom de l’auteur soit clairement mentionné.
     </footer>
 
 </div>
