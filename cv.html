@@ -20,28 +20,6 @@ body {
 }
 
 /* ---------------------------------------------------
-   BOUTON RETOUR
---------------------------------------------------- */
-.back-btn {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    color: #ffdf9e;
-    padding: 12px 28px;
-    border: 1.5px solid #ffdf9e;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 20px;
-    background: rgba(0,0,0,0.45);
-    transition: 0.3s;
-    z-index: 9999;
-}
-.back-btn:hover {
-    background: #ffdf9e;
-    color: black;
-}
-
-/* ---------------------------------------------------
    IMAGE DU CV
 --------------------------------------------------- */
 .cv-container {
@@ -145,15 +123,6 @@ body {
 --------------------------------------------------- */
 @media (max-width: 768px) {
 
-    /* 🔥 CACHER BOUTON RETOUR SUR MOBILE */
-    .back-btn {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        height: 0 !important;
-        overflow: hidden !important;
-    }
-
     .cv-container {
         margin-top: 75px;
     }
@@ -187,7 +156,6 @@ body {
         print-color-adjust: exact !important;
     }
 
-    .back-btn,
     .footer,
     .print-btn,
     .popup-overlay {
@@ -212,8 +180,6 @@ body {
 </head>
 
 <body>
-
-<a href="index.html" class="back-btn">← Retour</a>
 
 <div class="cv-container">
     <img src="CV_daniel.jpg" alt="Curriculum Vitae" class="cv-image" onclick="openPopup()">
@@ -243,9 +209,11 @@ body {
         <a href="contact.html">Me contacter</a>
     </div>
 
-    <div style="margin-top:10px; color:#ffdf9e;">
-        © 2026 Mon-Univers.ca — Tous droits réservés
-    </div>
+   <div style="margin-top:10px; color:#ffdf9e; font-size:14px;">
+    © 2026 Daniel L’Heureux — Curriculum Vitae<br>
+    Consultation et impression autorisées. Toute réutilisation interdite.
+</div>
+ 
 
 </div>
 

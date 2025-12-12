@@ -30,23 +30,6 @@ body {
 }
 
 /* ==============================
-   BOUTON RETOUR
-============================== */
-.back-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    color: #ffd700;
-    padding: 10px 24px;
-    border: 2px solid #ffd700;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 18px;
-    background: rgba(0,0,0,0.45);
-    z-index: 1000;
-}
-
-/* ==============================
    TEXTE INTRO
 ============================== */
 .intro {
@@ -147,28 +130,24 @@ body {
 }
 
 /* ==============================
-   FOOTER
+   COPYRIGHT
 ============================== */
 footer {
     text-align: center;
     font-size: 14px;
-    color: rgba(60,45,25,0.6);
-    margin-bottom: 40px;
+    color: rgba(60,45,25,0.7);
+    background: rgba(255,247,215,0.8);
+    padding: 20px;
+    margin: 40px auto 40px;
+    max-width: 1000px;
+    border-radius: 10px;
+    line-height: 1.6;
 }
 
 /* ==============================
    MOBILE
 ============================== */
 @media (max-width: 768px) {
-
-    /* 🔥 CACHER BOUTON RETOUR SUR MOBILE */
-    .back-btn {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        height: 0 !important;
-        overflow: hidden !important;
-    }
 
     .intro {
         font-size: 22px;
@@ -185,8 +164,6 @@ footer {
 </head>
 
 <body>
-
-<a href="index.html" class="back-btn">← Retour</a>
 
 <div class="intro">
 Ce ne sont pas des idoles, mais des repères.<br>
@@ -252,7 +229,10 @@ de penser, de douter et de regarder le monde.
 </div>
 
 <footer>
-    © 2026 Mon-Univers.ca — Tous droits réservés
+    © 2026 <strong>Daniel L’Heureux</strong> — Sources de réflexion<br>
+    Les contenus présentés sur cette page sont proposés à des fins de réflexion et de citation.<br>
+    Toute reproduction, réutilisation ou diffusion est autorisée uniquement avec
+    <strong>mention explicite de l’auteur et de la source</strong>.
 </footer>
 
 </body>

@@ -20,31 +20,6 @@
             text-align: center;
         }
 
-        /* Bouton retour */
-        .btn-retour {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            display: inline-block;
-            padding: 10px 20px;
-            border: 1px solid var(--gold);
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: bold;
-            color: var(--gold);
-            background: rgba(5, 3, 20, 0.4);
-            backdrop-filter: blur(4px);
-            transition: 0.25s;
-            z-index: 9999;
-        }
-
-        .btn-retour:hover {
-            background: var(--gold);
-            color: #120b22;
-            box-shadow: 0 0 12px rgba(247, 212, 138, 0.55);
-        }
-
         h1 {
             margin-top: 80px;
             font-size: 32px;
@@ -77,10 +52,7 @@
         /* Lightbox */
         #lightbox {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             background: rgba(0,0,0,0.8);
             display: none;
             justify-content: center;
@@ -95,17 +67,21 @@
             box-shadow: 0 0 25px rgba(255,255,255,0.55);
         }
 
-        /* ----------- MODE MOBILE ------------ */
-        @media (max-width: 768px) {
+        /* ---------- COPYRIGHT GALERIE ---------- */
+        footer {
+            margin-top: 60px;
+            padding: 18px;
+            font-size: 14px;
+            color: #ffdf9e;
+            background: rgba(0,0,0,0.55);
+            border-radius: 12px;
+            line-height: 1.6;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-            /* 🔥 CACHER BOUTON RETOUR SUR MOBILE */
-            .btn-retour {
-                display: none !important;
-                visibility: hidden !important;
-                opacity: 0 !important;
-                height: 0 !important;
-                overflow: hidden !important;
-            }
+        @media (max-width: 768px) {
 
             body {
                 padding: 20px 10px;
@@ -126,38 +102,43 @@
 
 <body>
 
-    <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
+<h1>Galerie de photos</h1>
 
-    <h1>Galerie de photos</h1>
+<div class="gallery">
+    <img src="cuisine-avant.jpg" alt="Cuisine avant">
+    <img src="cuisine-apres.jpg" alt="Cuisine après">
+    <img src="escalier-avant.jpg" alt="Escalier avant">
+    <img src="escalier-apres.jpg" alt="Escalier après">
+</div>
 
-    <div class="gallery">
-        <img src="cuisine-avant.jpg" alt="Cuisine avant">
-        <img src="cuisine-apres.jpg" alt="Cuisine après">
-        <img src="escalier-avant.jpg" alt="Escalier avant">
-        <img src="escalier-apres.jpg" alt="Escalier après">
-    </div>
+<!-- Lightbox -->
+<div id="lightbox">
+    <img id="lightbox-img" src="" alt="">
+</div>
 
-    <!-- Lightbox -->
-    <div id="lightbox">
-        <img id="lightbox-img" src="" alt="">
-    </div>
+<footer>
+    © 2026 <strong>Daniel L’Heureux</strong> — Galerie de photos<br>
+    Les images présentées sur cette page sont protégées par le droit d’auteur.<br>
+    Toute reproduction, téléchargement, diffusion ou réutilisation,
+    en tout ou en partie, est interdite sans autorisation écrite.
+</footer>
 
-    <script>
-        const images = document.querySelectorAll(".gallery img");
-        const lightbox = document.getElementById("lightbox");
-        const lightboxImg = document.getElementById("lightbox-img");
+<script>
+    const images = document.querySelectorAll(".gallery img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
 
-        images.forEach(img => {
-            img.addEventListener("click", () => {
-                lightbox.style.display = "flex";
-                lightboxImg.src = img.src;
-            });
+    images.forEach(img => {
+        img.addEventListener("click", () => {
+            lightbox.style.display = "flex";
+            lightboxImg.src = img.src;
         });
+    });
 
-        lightbox.addEventListener("click", () => {
-            lightbox.style.display = "none";
-        });
-    </script>
+    lightbox.addEventListener("click", () => {
+        lightbox.style.display = "none";
+    });
+</script>
 
 </body>
 </html>

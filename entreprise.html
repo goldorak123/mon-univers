@@ -19,29 +19,6 @@
         text-align: center;
     }
 
-    /* Bouton retour — version desktop */
-    .btn-retour {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        padding: 10px 20px;
-        border: 1px solid var(--gold);
-        border-radius: 50px;
-        text-decoration: none;
-        font-size: 0.95rem;
-        font-weight: bold;
-        color: var(--gold);
-        background: rgba(5, 3, 20, 0.4);
-        backdrop-filter: blur(6px);
-        transition: 0.25s;
-        z-index: 9999;
-    }
-    .btn-retour:hover {
-        background: var(--gold);
-        color: #120b22;
-        box-shadow: 0 0 12px rgba(247,212,138,0.55);
-    }
-
     /* TITRE */
     h1 {
         color: var(--gold);
@@ -66,6 +43,7 @@
         margin-top: 20px;
         transition: transform 0.25s;
     }
+
     .entreprise-img:hover {
         transform: scale(1.02);
     }
@@ -78,21 +56,22 @@
         margin-bottom: 40px;
     }
 
+    /* ---------- COPYRIGHT ENTREPRISE ---------- */
+    footer {
+        margin-top: 60px;
+        padding: 18px;
+        font-size: 14px;
+        color: #ffdf9e;
+        background: rgba(0,0,0,0.55);
+        border-radius: 12px;
+        line-height: 1.6;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     /* ----------- MODE MOBILE ------------ */
     @media (max-width: 768px) {
-
-        /* 🔥 CACHER LE BOUTON RETOUR SUR MOBILE */
-        .btn-retour {
-            display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
-            pointer-events: none !important;
-            height: 0 !important;
-            width: 0 !important;
-            padding: 0 !important;
-            margin: 0 !important;
-            border: none !important;
-        }
 
         body {
             padding: 20px 10px;
@@ -119,25 +98,26 @@
 
 <body>
 
-    <!-- Bouton retour -->
-    <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
+<h1>Mon entreprise</h1>
 
-    <h1>Mon entreprise</h1>
+<div class="section">
 
-    <div class="section">
+    <img src="entreprise1.jpg" alt="Bandeau 1" class="entreprise-img">
+    <img src="entreprise2.jpg" alt="Bandeau 2" class="entreprise-img">
 
-        <!-- Bandeau 1 -->
-        <img src="entreprise1.jpg" alt="Bandeau 1" class="entreprise-img">
+    <p>
+        Informations et présentation détaillée de mon entreprise.<br>
+        (Texte à venir…)
+    </p>
 
-        <!-- Bandeau 2 -->
-        <img src="entreprise2.jpg" alt="Bandeau 2" class="entreprise-img">
+</div>
 
-        <p>
-            Informations et présentation détaillée de mon entreprise.<br>
-            (Texte à venir…)
-        </p>
-
-    </div>
+<footer>
+    © 2026 <strong>Daniel L’Heureux</strong> — Présentation de l’entreprise<br>
+    Le contenu de cette page (textes et images) est protégé par le droit d’auteur.<br>
+    Toute reproduction, diffusion ou utilisation à des fins commerciales,
+    en tout ou en partie, est interdite sans autorisation écrite.
+</footer>
 
 </body>
 </html>

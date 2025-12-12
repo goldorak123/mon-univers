@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos — Mon-Univers.ca</title>
+
+<style>
+/* ==============================
+   BASE
+============================== */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: url("FOND-NEBULEUSE-UNIVERSDANIEL.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+/* ==============================
+   BLOC À PROPOS (DESKTOP)
+============================== */
+.about-box {
+    max-width: 900px;
+    padding: 48px 56px;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 40px rgba(0,0,0,0.45);
+}
+
+.about-box h1 {
+    color: #ffd700;
+    font-size: 36px;
+    margin-bottom: 28px;
+}
+
+.about-box p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.about-signature {
+    margin-top: 28px;
+    font-style: italic;
+    font-size: 16px;
+    color: #ffd700;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+.footer {
+    position: absolute;
+    bottom: 18px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #ffd700;
+}
+
+/* ==============================
+   VERSION MOBILE
+============================== */
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px;
+        align-items: flex-start;
+    }
+
+    .about-box {
+        width: 94%;
+        padding: 22px 20px;
+        margin-top: 120px;
+        border-radius: 16px;
+        background: rgba(0, 0, 0, 0.55);
+    }
+
+    .about-box h1 {
+        font-size: 26px;
+        margin-bottom: 18px;
+    }
+
+    .about-box p {
+        font-size: 16px;
+        line-height: 1.7;
+        text-align: left;
+    }
+
+    .about-signature {
+        font-size: 15px;
+        text-align: right;
+        margin-top: 24px;
+    }
+
+    .footer {
+        position: static;
+        margin-top: 40px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="about-box">
+    <h1>À propos</h1>
+
+    <p>
+        Mon-Univers.ca est un espace personnel de réflexion, de création et de transmission.
+    </p>
+
+    <p>
+        On y trouve des fragments de parcours : un mémoire de recherche, un livre,
+        des images, des inspirations — non pas comme des vérités figées,
+        mais comme des chemins ouverts.
+    </p>
+
+    <p>
+        Ce site n’a pas vocation à convaincre, mais à partager une manière de regarder le monde,
+        de penser le temps, la mémoire, et ce qui relie les choses entre elles.
+    </p>
+
+    <p>
+        Il s’adresse à celles et ceux qui prennent le temps,
+        qui doutent, qui observent,
+        et qui savent que la réflexion est parfois plus importante que la réponse.
+    </p>
+
+    <div class="about-signature">
+        — Daniel L’Heureux
+    </div>
+</div>
+
+<div class="footer">
+    © 2026 Mon-Univers.ca — Tous droits réservés
+</div>
+
+</body>
+</html>
