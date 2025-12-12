@@ -115,12 +115,12 @@ footer {
 #zoom-modal {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.92);
+    background: rgba(0,0,0,0.9);
     display: none;
     z-index: 99999;
 }
 
-/* bloquer le fond */
+/* bloque le scroll du fond */
 body.modal-open {
     overflow: hidden;
 }
@@ -132,30 +132,15 @@ body.modal-open {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: auto;
 }
 
-/* IMAGE ZOOM — CLÉ CONTRE LA DISTORSION */
 .zoom-content img {
     max-width: 100%;
     max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    object-fit: contain; /* 🔥 paysage et portrait OK */
     border-radius: 12px;
     border: 2px solid var(--gold);
-}
-
-/* bouton fermeture (DESKTOP SEULEMENT) */
-.close {
-    position: fixed;
-    top: 18px;
-    right: 22px;
-    font-size: 36px;
-    font-weight: bold;
-    color: red;
     cursor: pointer;
-    z-index: 100000;
 }
 
 /* ===== MOBILE ===== */
@@ -183,14 +168,8 @@ body.modal-open {
         width: 95%;
     }
 
-    /* plein écran image */
     .zoom-content {
-        inset: 15px;
-    }
-
-    /* 🔥 SUPPRIMER LE X ROUGE SUR MOBILE */
-    .close {
-        display: none !important;
+        inset: 20px;
     }
 }
 </style>
@@ -227,24 +206,26 @@ body.modal-open {
 
     <footer>
         © 2026 <strong>Daniel L’Heureux</strong><br>
-        La consultation, l'impression et la reproduction sont autorisées à condition
-        que le nom de l’auteur soit clairement mentionné.
+        La consultation, l'impression et la reproduction sont autorisées<br>
+        à condition que le nom de l’auteur soit clairement mentionné.
     </footer>
 
 </div>
 
 <!-- MODAL -->
 <div id="zoom-modal">
-    <div class="close" onclick="closeZoom()">✕</div>
     <div class="zoom-content">
-        <img id="zoom-img">
+        <img id="zoom-img" onclick="closeZoom()">
     </div>
 </div>
 
 <script>
 function openZoom(img) {
-    document.getElementById("zoom-img").src = img.src;
-    document.getElementById("zoom-modal").style.display = "block";
+    const modal = document.getElementById("zoom-modal");
+    const zoomImg = document.getElementById("zoom-img");
+
+    zoomImg.src = img.src;
+    modal.style.display = "block";
     document.body.classList.add("modal-open");
 }
 
