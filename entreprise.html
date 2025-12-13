@@ -1,122 +1,250 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Mon entreprise – Univers Daniel</title>
+<meta charset="UTF-8">
+<title>Mon entreprise – Univers Daniel</title>
 
 <style>
-    :root {
-        --gold: #ffcc66;
-    }
+:root {
+    --gold: #ffcc66;
+}
 
-    body {
-        background: url("FOND-NEBULEUSE-UNIVERSDANIEL.jpg") no-repeat center center fixed;
-        background-size: cover;
-        color: white;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 40px 20px;
-        text-align: center;
-    }
+/* ================= BASE PAGE ================= */
+body {
+    background: url("fond-memoire-papier.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #111;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    text-align: center;
+}
 
-    /* TITRE */
-    h1 {
-        color: var(--gold);
-        margin-top: 80px;
-        margin-bottom: 20px;
-        font-size: 32px;
-    }
+/* ================= TITRE ================= */
+h1 {
+    color: #d4a23a;
+    margin-top: 90px;
+    margin-bottom: 40px;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow:
+        0 2px 4px rgba(0,0,0,0.35),
+        0 6px 12px rgba(0,0,0,0.25);
+}
+.subtitle {
+    margin-top: -20px;
+    margin-bottom: 50px;
+    font-size: 18px;
+    color: #555;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
 
-    /* SECTION */
-    .section {
-        max-width: 900px;
-        margin: auto;
-    }
+/* ================= CONTENU ================= */
+.section {
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
 
-    /* IMAGES ENTREPRISE */
-    .entreprise-img {
-        width: 80%;
-        max-width: 800px;
-        border: 2px solid #ffffff33;
-        border-radius: 12px;
-        margin-bottom: 30px;
-        margin-top: 20px;
-        transition: transform 0.25s;
-    }
+/* ================= TEXTE ================= */
+.section > p {
+    font-size: 18px;
+    color: #111;
+    line-height: 1.7;
+    margin-bottom: 80px;
+    text-align: left;
+}
+
+/* ================= IMAGES ================= */
+.entreprise-img {
+    width: 80%;
+    max-width: 800px;
+    border: 2px solid #00000022;
+    border-radius: 12px;
+    margin: 25px auto 35px;
+    display: block;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transition: transform 0.35s ease;
+}
+
+/* ===== EFFET SCRAPBOOK (WEB SEULEMENT) ===== */
+@media (min-width: 1024px) {
+
+    .entreprise-img:nth-of-type(1)  { transform: rotate(-2deg) translateX(-35px); }
+    .entreprise-img:nth-of-type(2)  { transform: rotate(1.5deg) translateX(30px); }
+    .entreprise-img:nth-of-type(3)  { transform: rotate(-1deg) translateX(-20px); }
+    .entreprise-img:nth-of-type(4)  { transform: rotate(2deg) translateX(35px); }
+    .entreprise-img:nth-of-type(5)  { transform: rotate(-1.5deg) translateX(-30px); }
+    .entreprise-img:nth-of-type(6)  { transform: rotate(1deg) translateX(20px); }
+    .entreprise-img:nth-of-type(7)  { transform: rotate(-2deg) translateX(-25px); }
+    .entreprise-img:nth-of-type(8)  { transform: rotate(1.5deg) translateX(30px); }
+    .entreprise-img:nth-of-type(9)  { transform: rotate(-1deg) translateX(-20px); }
+    .entreprise-img:nth-of-type(10) { transform: rotate(2deg) translateX(35px); }
+    .entreprise-img:nth-of-type(11) { transform: rotate(-1.5deg) translateX(-30px); }
+    .entreprise-img:nth-of-type(12) { transform: rotate(1deg) translateX(25px); }
+    .entreprise-img:nth-of-type(13) { transform: rotate(-2deg) translateX(-25px); }
+    .entreprise-img:nth-of-type(14) { transform: rotate(1.5deg) translateX(30px); }
+    .entreprise-img:nth-of-type(15) { transform: rotate(-1deg) translateX(-20px); }
+    .entreprise-img:nth-of-type(16) { transform: rotate(2deg) translateX(35px); }
 
     .entreprise-img:hover {
-        transform: scale(1.02);
+        transform: rotate(0deg) scale(1.06);
+        z-index: 5;
+    }
+}
+
+/* ===== DISPOSITION MOSAÏQUE WEB (PLEINE LARGEUR) ===== */
+@media (min-width: 1200px) {
+
+    .section {
+        max-width: 100%;
+        padding: 0 120px;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 40px;
+        row-gap: 60px;
     }
 
-    /* TEXTE */
-    p {
-        font-size: 18px;
-        color: #ddd;
-        line-height: 1.6;
-        margin-bottom: 40px;
+    .section > p {
+        grid-column: 2 / span 4;
     }
 
-    /* ---------- COPYRIGHT ENTREPRISE ---------- */
-    footer {
-        margin-top: 60px;
-        padding: 18px;
-        font-size: 14px;
-        color: #ffdf9e;
-        background: rgba(0,0,0,0.55);
-        border-radius: 12px;
-        line-height: 1.6;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
+    .entreprise-img {
+        width: 100%;
+        max-width: none;
+        margin: 0;
     }
 
-    /* ----------- MODE MOBILE ------------ */
-    @media (max-width: 768px) {
-
-        body {
-            padding: 20px 10px;
-        }
-
-        h1 {
-            font-size: 26px;
-            margin-top: 100px;
-        }
-
-        p {
-            font-size: 16px;
-            margin-bottom: 30px;
-        }
-
-        .entreprise-img {
-            width: 100%;
-            max-width: 500px;
-        }
+    .entreprise-img:nth-of-type(1),
+    .entreprise-img:nth-of-type(4),
+    .entreprise-img:nth-of-type(7),
+    .entreprise-img:nth-of-type(10),
+    .entreprise-img:nth-of-type(13),
+    .entreprise-img:nth-of-type(16) {
+        grid-column: 1 / span 3;
     }
+
+    .entreprise-img:nth-of-type(2),
+    .entreprise-img:nth-of-type(5),
+    .entreprise-img:nth-of-type(8),
+    .entreprise-img:nth-of-type(11),
+    .entreprise-img:nth-of-type(14) {
+        grid-column: 4 / span 3;
+    }
+
+    .entreprise-img:nth-of-type(3),
+    .entreprise-img:nth-of-type(6),
+    .entreprise-img:nth-of-type(9),
+    .entreprise-img:nth-of-type(12),
+    .entreprise-img:nth-of-type(15) {
+        grid-column: 2 / span 4;
+    }
+}
+
+/* ================= FOOTER ================= */
+footer {
+    margin-top: 70px;
+    padding: 18px;
+    font-size: 14px;
+    color: #333;
+    background: rgba(255,255,255,0.6);
+    border-radius: 12px;
+    line-height: 1.6;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+    body { padding: 20px 10px; }
+
+    h1 {
+        font-size: 28px;
+        margin-top: 100px;
+    }
+
+    .section {
+        display: block;
+        padding: 0;
+    }
+
+    .entreprise-img {
+        width: 100%;
+        max-width: 500px;
+        transform: none !important;
+    }
+}
+
+/* ================= PAPIER ================= */
+
+/* Ombres latérales */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    box-shadow:
+        inset 70px 0 90px rgba(0,0,0,0.07),
+        inset -70px 0 90px rgba(0,0,0,0.07);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Grain papier */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("grain-papier.png");
+    background-repeat: repeat;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 1;
+}
 </style>
-
 </head>
 
 <body>
 
 <h1>Mon entreprise</h1>
+<p class="subtitle">— une page de ma vie</p>
+
 
 <div class="section">
 
-    <img src="entreprise1.jpg" alt="Bandeau 1" class="entreprise-img">
-    <img src="entreprise2.jpg" alt="Bandeau 2" class="entreprise-img">
+<p>
+    Ces images sont les traces d’un pan de ma vie qui m’a profondément marqué. Pendant douze années, cette entreprise a été bien plus qu’un travail : elle a rythmé mes journées, mes choix, mes inquiétudes comme mes espoirs.<br><br>
+    Derrière chaque espace, chaque outil, il y a des souvenirs faits d’engagement total, de fatigue parfois, mais aussi de liens humains forts, de confiance accordée et de responsabilités assumées envers les autres. J’y ai mis beaucoup de moi-même, souvent sans compter.<br><br>
+    À son apogée, cette entreprise comptait jusqu’à vingt-cinq employés. Aujourd’hui, même si elle n’existe plus, elle demeure une part vivante de mon histoire : une expérience humaine intense, exigeante, et profondément formatatrice, que je porte encore avec respect et reconnaissance.
+</p>
 
-    <p>
-        Informations et présentation détaillée de mon entreprise.<br>
-        (Texte à venir…)
-    </p>
+<img src="entreprise-1.jpg" class="entreprise-img">
+<img src="entreprise-2.jpg" class="entreprise-img">
+<img src="entreprise-3.jpg" class="entreprise-img">
+<img src="entreprise-4.jpg" class="entreprise-img">
+<img src="entreprise-5.jpg" class="entreprise-img">
+<img src="entreprise-6.jpg" class="entreprise-img">
+<img src="entreprise-7.jpg" class="entreprise-img">
+<img src="entreprise-8.jpg" class="entreprise-img">
+<img src="entreprise-9.jpg" class="entreprise-img">
+<img src="entreprise-10.jpg" class="entreprise-img">
+<img src="entreprise-11.jpg" class="entreprise-img">
+<img src="entreprise-12.jpg" class="entreprise-img">
+<img src="entreprise-13.jpg" class="entreprise-img">
+<img src="entreprise-14.jpg" class="entreprise-img">
+<img src="entreprise-15.jpg" class="entreprise-img">
+<img src="entreprise-16.jpg" class="entreprise-img">
 
 </div>
 
 <footer>
-    © 2026 <strong>Daniel L’Heureux</strong> — Présentation de l’entreprise<br>
-    Le contenu de cette page (textes et images) est protégé par le droit d’auteur.<br>
-    Toute reproduction, diffusion ou utilisation à des fins commerciales,
-    en tout ou en partie, est interdite sans autorisation écrite.
+© 2026 – <strong>Tous droits réservés</strong>
 </footer>
 
 </body>

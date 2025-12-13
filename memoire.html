@@ -10,68 +10,134 @@
     --gold: #c9a24d;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
+/* ================= BASE ================= */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    color: #2b2b2b;
+    color: #111;
     background: url("fond-memoire-papier.jpg") no-repeat center center fixed;
     background-size: cover;
     text-align: center;
     overflow-x: hidden;
 }
 
-/* CONTENEUR */
+/* ================= CONTENEUR ================= */
 .container {
-    max-width: 980px;
-    margin: 40px auto 60px;
-    padding: 40px;
+    max-width: 100%;
+    margin: 60px auto 80px;
+    padding: 0 120px;
+    position: relative;
 }
 
-/* TITRE */
+/* ================= TITRE ================= */
 h1 {
     color: var(--gold);
-    font-size: 34px;
-    margin-top: 0;
-    margin-bottom: 50px;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    font-size: 38px;
+    margin-bottom: 80px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.35);
 }
 
-/* COUVERTURE */
+/* ================= HEADER ================= */
+.cover-zone {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 80px;
+    align-items: flex-start;
+    margin-bottom: 120px;
+}
+
+/* ================= NOTE ================= */
+.memoire-note {
+    position: relative;
+    background: rgba(245,240,228,0.95);
+    border: 1px solid rgba(0,0,0,0.25);
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+    padding: 26px 28px;
+    font-size: 15.5px;
+    line-height: 1.6;
+    text-align: left;
+
+    margin-top: 160px;
+    transform: rotate(-3.6deg);
+}
+
+/* punaise */
+.memoire-note::before {
+    content: "";
+    position: absolute;
+    top: -18px;
+    left: 52%;
+    transform: translateX(-50%) rotate(-7deg);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #fff, #c0392b 40%, #7a1e16 70%);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+
+/* ================= COUVERTURE ================= */
 .cover {
-    width: 85%;
-    max-width: 820px;
-    border-radius: 12px;
-    border: 2px solid #ffffff66;
-    margin: 0 auto 50px;
+    width: 100%;
+    max-width: 760px;
+    border-radius: 14px;
+    border: 2px solid rgba(0,0,0,0.25);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+    transform: rotate(1.2deg);
+    margin-top: 80px;
 }
 
-/* IMAGES DU MÉMOIRE */
+/* ================= IMAGES (GRILLE ENTREPRISE) ================= */
 .previews {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 40px;
+    row-gap: 60px;
 }
 
 .previews img {
     width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
     border-radius: 12px;
-    border: 2px solid #ffffff66;
+    border: 2px solid rgba(0,0,0,0.25);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transition: transform 0.35s ease;
 }
 
-/* ACTION */
+/* ===== POSITIONNEMENT DES IMAGES (COMME ENTREPRISE) ===== */
+.previews img:nth-of-type(1),
+.previews img:nth-of-type(4),
+.previews img:nth-of-type(7),
+.previews img:nth-of-type(10) {
+    grid-column: 1 / span 3;
+}
+
+.previews img:nth-of-type(2),
+.previews img:nth-of-type(5),
+.previews img:nth-of-type(8),
+.previews img:nth-of-type(11) {
+    grid-column: 4 / span 3;
+}
+
+.previews img:nth-of-type(3),
+.previews img:nth-of-type(6),
+.previews img:nth-of-type(9),
+.previews img:nth-of-type(12) {
+    grid-column: 2 / span 4;
+}
+
+/* ===== SCRAPBOOK ===== */
+@media (min-width: 1024px) {
+    .previews img:nth-child(odd)  { transform: rotate(-1.8deg); }
+    .previews img:nth-child(even) { transform: rotate(1.8deg); }
+
+    .previews img:hover {
+        transform: rotate(0deg) scale(1.06);
+        z-index: 5;
+    }
+}
+
+/* ================= ACTION ================= */
 .actions {
-    display: flex;
-    justify-content: center;
-    margin-top: 60px;
+    margin-top: 100px;
 }
 
 .button {
@@ -82,55 +148,47 @@ h1 {
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
-    transition: 0.25s;
 }
 
-.button:hover {
-    background: #ffd980;
-}
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer {
-    margin-top: 60px;
+    margin-top: 100px;
     font-size: 14px;
     color: #4a3b14;
     line-height: 1.6;
 }
 
-/* MOBILE — CORRECTION DÉFINITIVE */
-@media (max-width: 768px) {
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
 
     .container {
-        width: 100%;
-        margin: 30px auto 40px;
-        padding: 22px;
+        padding: 0 20px;
     }
 
-    h1 {
-        font-size: 26px;
-        margin-bottom: 35px;
+    .cover-zone {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .memoire-note {
+        transform: none;
+        margin-top: 0;
     }
 
     .cover {
-        width: 100%;
+        transform: none;
+        margin-top: 0;
+    }
+
+    .previews {
+        display: block;
     }
 
     .previews img {
         width: 100%;
+        transform: none !important;
+        margin-bottom: 40px;
     }
-
-    .button {
-        width: 100%;
-    }
-}
-
-/* sécurité images globale */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 </style>
 </head>
@@ -139,37 +197,45 @@ img {
 
 <div class="container">
 
-    <h1>Mémoire de recherche – Baccalauréat</h1>
+<h1>Mon mémoire de recherche de Baccalauréat</h1>
+
+<div class="cover-zone">
+
+    <div class="memoire-note">
+        Ce mémoire de recherche a été rédigé dans le cadre du <strong>baccalauréat universitaire</strong>, où la réalisation d’un travail de recherche original constituait une <strong>exigence obligatoire</strong> pour l’obtention du diplôme et du <strong>grade de bachelier</strong>.<br><br>
+        Plus qu’un simple exercice académique, il représente une démarche de réflexion approfondie, étalée sur plusieurs mois, et une étape marquante de mon parcours intellectuel et universitaire.
+    </div>
 
     <img src="cover.jpg" class="cover" alt="Couverture du mémoire">
 
-    <div class="previews">
-        <img src="jean-paul2-memoire.jpg">
-        <img src="apercu6.jpg">
-        <img src="apercu7.jpg">
-        <img src="apercu8.jpg">
-        <img src="resume-memoire.jpg">
-        <img src="apercu1.jpg">
-        <img src="usa-memoire.jpg">
-        <img src="apercu2.jpg">
-        <img src="apercu3.jpg">
-        <img src="apercu4.jpg">
-        <img src="apercu5.jpg">
-        <img src="revue-memoire.jpg">
-    </div>
+</div>
 
-    <div class="actions">
-        <a class="button" href="memoire.pdf" target="_blank">
-            Voir le PDF / imprimer
-        </a>
-    </div>
+<div class="previews">
+    <img src="jean-paul2-memoire.jpg">
+    <img src="apercu6.jpg">
+    <img src="apercu7.jpg">
+    <img src="apercu8.jpg">
+    <img src="resume-memoire.jpg">
+    <img src="apercu1.jpg">
+    <img src="usa-memoire.jpg">
+    <img src="apercu2.jpg">
+    <img src="apercu3.jpg">
+    <img src="apercu4.jpg">
+    <img src="apercu5.jpg">
+    <img src="revue-memoire.jpg">
+</div>
 
-    <footer>
-        © 2026 <strong>Tous droits réservés</strong><br>
-        La consultation, l'impression et la reproduction<br>
-        sont autorisées à condition que le nom de l’auteur<br>
-        soit clairement mentionné.
-    </footer>
+<div class="actions">
+    <a class="button" href="memoire.pdf" target="_blank">
+        Voir le PDF complet / imprimer
+    </a>
+</div>
+
+<footer>
+© 2026 <strong>Tous droits réservés</strong><br>
+La consultation, l'impression et la reproduction sont autorisées<br>
+à condition que le nom de l’auteur soit clairement mentionné.
+</footer>
 
 </div>
 
