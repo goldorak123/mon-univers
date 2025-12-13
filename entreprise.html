@@ -2,43 +2,31 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mon entreprise – Univers Daniel</title>
 
 <style>
 :root {
-    --gold: #ffcc66;
+    --gold: #d4a23a;
 }
 
-/* ================= BASE PAGE ================= */
+/* ================= BASE ================= */
 body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #111;
     background: url("fond-memoire-papier.jpg") no-repeat center center fixed;
     background-size: cover;
-    color: #111;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 40px 20px;
     text-align: center;
+    overflow-x: hidden;
 }
 
 /* ================= TITRE ================= */
 h1 {
-    color: #d4a23a;
-    margin-top: 90px;
-    margin-bottom: 40px;
+    color: var(--gold);
     font-size: 42px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-shadow:
-        0 2px 4px rgba(0,0,0,0.35),
-        0 6px 12px rgba(0,0,0,0.25);
-}
-.subtitle {
-    margin-top: -20px;
-    margin-bottom: 50px;
-    font-size: 18px;
-    color: #555;
-    font-style: italic;
-    letter-spacing: 0.5px;
+    margin: 90px 0 40px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.35);
 }
 
 /* ================= CONTENU ================= */
@@ -50,151 +38,81 @@ h1 {
 }
 
 /* ================= TEXTE ================= */
-.section > p {
+.section p {
     font-size: 18px;
-    color: #111;
     line-height: 1.7;
-    margin-bottom: 80px;
     text-align: left;
+    margin-bottom: 60px;
 }
 
 /* ================= IMAGES ================= */
 .entreprise-img {
     width: 80%;
     max-width: 800px;
-    border: 2px solid #00000022;
-    border-radius: 12px;
     margin: 25px auto 35px;
     display: block;
+    border-radius: 12px;
+    border: 2px solid rgba(0,0,0,0.25);
     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     transition: transform 0.35s ease;
 }
 
-/* ===== EFFET SCRAPBOOK (WEB SEULEMENT) ===== */
+/* ================= EFFET SCRAPBOOK WEB ================= */
 @media (min-width: 1024px) {
 
-    .entreprise-img:nth-of-type(1)  { transform: rotate(-2deg) translateX(-35px); }
-    .entreprise-img:nth-of-type(2)  { transform: rotate(1.5deg) translateX(30px); }
-    .entreprise-img:nth-of-type(3)  { transform: rotate(-1deg) translateX(-20px); }
-    .entreprise-img:nth-of-type(4)  { transform: rotate(2deg) translateX(35px); }
-    .entreprise-img:nth-of-type(5)  { transform: rotate(-1.5deg) translateX(-30px); }
-    .entreprise-img:nth-of-type(6)  { transform: rotate(1deg) translateX(20px); }
-    .entreprise-img:nth-of-type(7)  { transform: rotate(-2deg) translateX(-25px); }
-    .entreprise-img:nth-of-type(8)  { transform: rotate(1.5deg) translateX(30px); }
-    .entreprise-img:nth-of-type(9)  { transform: rotate(-1deg) translateX(-20px); }
-    .entreprise-img:nth-of-type(10) { transform: rotate(2deg) translateX(35px); }
-    .entreprise-img:nth-of-type(11) { transform: rotate(-1.5deg) translateX(-30px); }
-    .entreprise-img:nth-of-type(12) { transform: rotate(1deg) translateX(25px); }
-    .entreprise-img:nth-of-type(13) { transform: rotate(-2deg) translateX(-25px); }
-    .entreprise-img:nth-of-type(14) { transform: rotate(1.5deg) translateX(30px); }
-    .entreprise-img:nth-of-type(15) { transform: rotate(-1deg) translateX(-20px); }
-    .entreprise-img:nth-of-type(16) { transform: rotate(2deg) translateX(35px); }
+    .entreprise-img:nth-of-type(odd)  { transform: rotate(-1.5deg); }
+    .entreprise-img:nth-of-type(even) { transform: rotate(1.5deg); }
 
     .entreprise-img:hover {
-        transform: rotate(0deg) scale(1.06);
+        transform: rotate(0deg) scale(1.05);
         z-index: 5;
-    }
-}
-
-/* ===== DISPOSITION MOSAÏQUE WEB (PLEINE LARGEUR) ===== */
-@media (min-width: 1200px) {
-
-    .section {
-        max-width: 100%;
-        padding: 0 120px;
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        column-gap: 40px;
-        row-gap: 60px;
-    }
-
-    .section > p {
-        grid-column: 2 / span 4;
-    }
-
-    .entreprise-img {
-        width: 100%;
-        max-width: none;
-        margin: 0;
-    }
-
-    .entreprise-img:nth-of-type(1),
-    .entreprise-img:nth-of-type(4),
-    .entreprise-img:nth-of-type(7),
-    .entreprise-img:nth-of-type(10),
-    .entreprise-img:nth-of-type(13),
-    .entreprise-img:nth-of-type(16) {
-        grid-column: 1 / span 3;
-    }
-
-    .entreprise-img:nth-of-type(2),
-    .entreprise-img:nth-of-type(5),
-    .entreprise-img:nth-of-type(8),
-    .entreprise-img:nth-of-type(11),
-    .entreprise-img:nth-of-type(14) {
-        grid-column: 4 / span 3;
-    }
-
-    .entreprise-img:nth-of-type(3),
-    .entreprise-img:nth-of-type(6),
-    .entreprise-img:nth-of-type(9),
-    .entreprise-img:nth-of-type(12),
-    .entreprise-img:nth-of-type(15) {
-        grid-column: 2 / span 4;
     }
 }
 
 /* ================= FOOTER ================= */
 footer {
-    margin-top: 70px;
-    padding: 18px;
+    margin: 70px auto 40px;
+    max-width: 900px;
     font-size: 14px;
     color: #333;
     background: rgba(255,255,255,0.6);
+    padding: 18px;
     border-radius: 12px;
-    line-height: 1.6;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    z-index: 2;
 }
 
-/* ================= MOBILE ================= */
+/* =====================================================
+   📱 MOBILE — CORRECTION DÉFINITIVE (ICI ÉTAIT LE BUG)
+===================================================== */
 @media (max-width: 768px) {
 
     body {
-        padding: 20px 14px;
+        padding: 0;
     }
 
     h1 {
-        font-size: 28px;
-        margin-top: 90px;
-        margin-bottom: 30px;
-    }
-
-    p {
-        font-size: 17px;      /* 👈 ICI la clé */
-        line-height: 1.7;
+        font-size: 30px;
+        margin: 80px 12px 30px;
     }
 
     .section {
         max-width: 100%;
+        padding: 0 16px;
+    }
+
+    .section p {
+        font-size: 18px;        /* 👈 TEXTE LISIBLE */
+        line-height: 1.8;
     }
 
     .entreprise-img {
         width: 100%;
         max-width: none;
-        transform: none !important;
         margin: 20px auto 30px;
+        transform: none !important;
     }
 }
 
-
-
-/* ================= PAPIER ================= */
-
-/* Ombres latérales */
+/* ================= EFFET PAPIER ================= */
 body::before {
     content: "";
     position: fixed;
@@ -205,33 +123,28 @@ body::before {
     pointer-events: none;
     z-index: 0;
 }
-
-/* Grain papier */
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image: url("grain-papier.png");
-    background-repeat: repeat;
-    opacity: 0.08;
-    pointer-events: none;
-    z-index: 1;
-}
 </style>
 </head>
 
 <body>
 
-<h1>Mon entreprise</h1>
-<p class="subtitle">— une page de ma vie</p>
-
+<h1>Mon ex-entreprise</h1>
 
 <div class="section">
 
 <p>
-    Ces images sont les traces d’un pan de ma vie qui m’a profondément marqué. Pendant douze années, cette entreprise a été bien plus qu’un travail : elle a rythmé mes journées, mes choix, mes inquiétudes comme mes espoirs.<br><br>
-    Derrière chaque espace, chaque outil, il y a des souvenirs faits d’engagement total, de fatigue parfois, mais aussi de liens humains forts, de confiance accordée et de responsabilités assumées envers les autres. J’y ai mis beaucoup de moi-même, souvent sans compter.<br><br>
-    À son apogée, cette entreprise comptait jusqu’à vingt-cinq employés. Aujourd’hui, même si elle n’existe plus, elle demeure une part vivante de mon histoire : une expérience humaine intense, exigeante, et profondément formatatrice, que je porte encore avec respect et reconnaissance.
+Ces images sont les traces d’un pan de ma vie qui m’a profondément marqué.
+Pendant <strong>douze années</strong>, cette entreprise a été bien plus qu’un travail :
+elle a rythmé mes journées, mes choix, mes inquiétudes comme mes espoirs.<br><br>
+
+Derrière chaque espace, chaque outil, il y a des souvenirs faits d’engagement total,
+de fatigue parfois, mais aussi de liens humains forts, de confiance accordée et de
+responsabilités assumées envers les autres. J’y ai mis beaucoup de moi-même,
+souvent sans compter.<br><br>
+
+<strong>À son apogée, cette entreprise comptait jusqu’à vingt-cinq employés.</strong>
+Aujourd’hui, même si elle n’existe plus, elle demeure une part vivante de mon histoire :
+une expérience humaine intense, exigeante et profondément formatrice.
 </p>
 
 <img src="entreprise-1.jpg" class="entreprise-img">
@@ -240,16 +153,6 @@ body::after {
 <img src="entreprise-4.jpg" class="entreprise-img">
 <img src="entreprise-5.jpg" class="entreprise-img">
 <img src="entreprise-6.jpg" class="entreprise-img">
-<img src="entreprise-7.jpg" class="entreprise-img">
-<img src="entreprise-8.jpg" class="entreprise-img">
-<img src="entreprise-9.jpg" class="entreprise-img">
-<img src="entreprise-10.jpg" class="entreprise-img">
-<img src="entreprise-11.jpg" class="entreprise-img">
-<img src="entreprise-12.jpg" class="entreprise-img">
-<img src="entreprise-13.jpg" class="entreprise-img">
-<img src="entreprise-14.jpg" class="entreprise-img">
-<img src="entreprise-15.jpg" class="entreprise-img">
-<img src="entreprise-16.jpg" class="entreprise-img">
 
 </div>
 
