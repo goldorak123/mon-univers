@@ -10,6 +10,12 @@
     --gold: #c9a24d;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -45,7 +51,7 @@ h1 {
     margin: 0 auto 50px;
 }
 
-/* IMAGES DU MÉMOIRE – GRAND FORMAT */
+/* IMAGES DU MÉMOIRE */
 .previews {
     display: flex;
     flex-direction: column;
@@ -91,16 +97,14 @@ footer {
     line-height: 1.6;
 }
 
-/* MOBILE */
+/* MOBILE — CORRECTION DÉFINITIVE */
 @media (max-width: 768px) {
 
     .container {
-    width: 92%;
-    margin: 30px auto 40px;
-    padding: 22px;
-    overflow-x: hidden; /* ← AJOUTER ICI (ligne 101) */
-}
-
+        width: 100%;
+        margin: 30px auto 40px;
+        padding: 22px;
+    }
 
     h1 {
         font-size: 26px;
@@ -108,30 +112,19 @@ footer {
     }
 
     .cover {
-        width: 95%;
+        width: 100%;
     }
 
     .previews img {
         width: 100%;
     }
 
- .button {
-    width: 95%;
+    .button {
+        width: 100%;
+    }
 }
 
-/* correction centrage mobile – memoire */
-.cover,
-.previews img {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-   
-    }
-/* sécurité centrage mobile */
+/* sécurité images globale */
 img {
     max-width: 100%;
     height: auto;
@@ -139,7 +132,6 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
-
 </style>
 </head>
 
