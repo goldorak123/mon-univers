@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Découvrir mon livre</title>
 
     <style>
@@ -22,7 +23,7 @@
 
         .container {
             max-width: 850px;
-            margin: 120px auto 60px auto;
+            margin: 120px auto 60px;
             background: rgba(0, 0, 0, 0.45);
             padding: 40px;
             border-radius: 20px;
@@ -102,7 +103,6 @@
             box-shadow: 0 0 12px rgba(247,212,138,0.55);
         }
 
-        /* ---------- COPYRIGHT LIVRE ---------- */
         footer {
             margin-top: 50px;
             font-size: 14px;
@@ -113,11 +113,18 @@
             line-height: 1.6;
         }
 
-        @media(max-width: 768px) {
+        /* ===== MOBILE PROPRE ET LISIBLE ===== */
+        @media (max-width: 768px) {
+
+            body {
+                padding: 20px 12px;
+                background-attachment: scroll;
+            }
+
             .container {
-                width: 95%;
-                padding: 25px;
-                margin-top: 140px;
+                width: 96%;
+                padding: 26px 20px;
+                margin: 80px auto 40px;
             }
 
             h1 {
@@ -125,50 +132,30 @@
             }
 
             .sub {
-                font-size: 17px;
-            }
-
-            p {
-                font-size: 16px;
+                font-size: 18px;
             }
 
             h2 {
                 font-size: 24px;
             }
 
-            .cta {
-                width: 90%;
-                display: block;
+            p {
                 font-size: 17px;
+                line-height: 1.7;
+                text-align: left;
+            }
+
+            .book-cover {
+                width: 80%;
+                max-width: 340px;
+            }
+
+            .cta {
+                width: 100%;
+                font-size: 18px;
+                padding: 14px 0;
             }
         }
-    
-    /* ===== MOBILE : corriger affichage minuscule ===== */
-@media (max-width: 768px) {
-
-    h1 {
-        font-size: 32px;
-    }
-
-    .sub {
-        font-size: 18px;
-    }
-
-    p {
-        font-size: 17px;
-        line-height: 1.7;
-    }
-
-    .book-cover {
-        width: 65%;
-    }
-
-    .cta {
-        font-size: 18px;
-        padding: 14px 20px;
-    }
-}
-
     </style>
 </head>
 
@@ -177,6 +164,7 @@
 <div class="container">
 
     <h1>Découvrir mon livre</h1>
+
     <p class="sub">
         <strong>Rencontres au Clair de Lune</strong><br>
         Disponible en format numérique et papier sur Lulu.com
@@ -188,19 +176,17 @@
 
     <p>
         Alfred Sisley, vieillard aguerri, meurtri de mélancolie, vit seul avec ses souvenirs.<br>
-        Il attend en silence le signe de son seul véritable amour,<br>
-        impuissant devant le temps, surmontant ses peines, défiant ses rêves récurrents<br>
-        et ses écrits déchirants.<br><br>
-        Il fit la rencontre de Joé dont Sisley trouva en lui le miroir de ses trente ans,<br>
-        une unité profonde et une puissante synergie. Au travers sa musique, qui agit sur lui<br>
-        comme l'écho de ses souvenirs, il remue ainsi sa mémoire, racontant à Joé son histoire <br>
-        tout en cherchant à retrouver ce quelque chose de manquant d'il y a si longtemps.<br>
-        <br>
+        Il attend en silence le signe de son seul véritable amour,
+        impuissant devant le temps, surmontant ses peines,
+        défiant ses rêves récurrents et ses écrits déchirants.<br><br>
+        Il fit la rencontre de Joé dont Sisley trouva en lui le miroir de ses trente ans,
+        une unité profonde et une puissante synergie. À travers sa musique,
+        qui agit sur lui comme l’écho de ses souvenirs,
+        il remue ainsi sa mémoire, racontant à Joé son histoire
+        tout en cherchant à retrouver ce quelque chose de manquant d’il y a si longtemps.
     </p>
 
-    <!-- BOUTONS D’ACHAT -->
     <div class="buy-buttons">
-
         <a class="cta"
            href="https://www.lulu.com/shop/daniel-lheureux/rencontres-au-clair-de-lune/paperback/product-18rw5mv.html"
            target="_blank">
@@ -212,14 +198,13 @@
            target="_blank">
             Acheter – version e-book
         </a>
-
     </div>
 
     <footer>
         © 2026 <strong>Daniel L’Heureux</strong> — <em>Rencontres au Clair de Lune</em><br>
         Cette œuvre est protégée par le droit d’auteur.<br>
-        Toute modification, diffusion commerciale ou adaptation théatrale, cinématographique ou autre
-        est interdite sans autorisation écrite.
+        Toute modification, diffusion commerciale ou adaptation théâtrale,
+        cinématographique ou autre est interdite sans autorisation écrite.
     </footer>
 
 </div>
