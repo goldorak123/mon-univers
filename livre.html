@@ -11,19 +11,22 @@
             --text-dark: #120b22;
         }
 
+        /* ===== PAGE ===== */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             color: white;
             background: url("FOND-NEBULEUSE-UNIVERSDANIEL.jpg") no-repeat center center fixed;
             background-size: cover;
-            padding: 40px 20px;
+            padding: 40px 0;
             text-align: center;
+            overflow-x: hidden;
         }
 
+        /* ===== CONTENEUR ===== */
         .container {
             max-width: 850px;
-            margin: 120px auto 60px;
+            margin: 80px auto 40px;
             background: rgba(0, 0, 0, 0.45);
             padding: 40px;
             border-radius: 20px;
@@ -31,7 +34,7 @@
         }
 
         h1 {
-            font-size: 45px;
+            font-size: 42px;
             margin-bottom: 10px;
             color: var(--gold);
         }
@@ -42,29 +45,12 @@
         }
 
         .book-cover {
-            width: 260px;
+            width: 280px;
             max-width: 90%;
             border-radius: 12px;
-            margin-bottom: 25px;
+            margin: 25px auto;
             cursor: pointer;
             border: 2px solid #ffffff33;
-        }
-
-        #zoom-modal {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.85);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 999999;
-        }
-
-        #zoom-modal img {
-            width: 90%;
-            max-width: 900px;
-            border-radius: 12px;
-            border: 2px solid var(--gold);
         }
 
         h2 {
@@ -74,9 +60,10 @@
 
         p {
             font-size: 18px;
-            line-height: 1.6;
+            line-height: 1.65;
         }
 
+        /* ===== BOUTONS ===== */
         .buy-buttons {
             display: flex;
             justify-content: center;
@@ -103,8 +90,9 @@
             box-shadow: 0 0 12px rgba(247,212,138,0.55);
         }
 
+        /* ===== FOOTER ===== */
         footer {
-            margin-top: 50px;
+            margin-top: 40px;
             font-size: 14px;
             color: #ffdf9e;
             background: rgba(0,0,0,0.55);
@@ -113,26 +101,33 @@
             line-height: 1.6;
         }
 
-        /* ===== MOBILE PROPRE ET LISIBLE ===== */
+        /* ===== MOBILE ===== */
         @media (max-width: 768px) {
 
             body {
-                padding: 20px 12px;
-                background-attachment: scroll;
+                padding: 20px 0;
             }
 
             .container {
-                width: 96%;
-                padding: 26px 20px;
-                margin: 80px auto 40px;
+                width: 92%;
+                padding: 26px 22px;
+                margin: 50px auto 30px;
+                border-radius: 18px;
             }
 
             h1 {
-                font-size: 30px;
+                font-size: 32px;
+                margin-bottom: 8px;
             }
 
             .sub {
                 font-size: 18px;
+                margin-bottom: 22px;
+            }
+
+            .book-cover {
+                width: 70%;
+                margin: 20px auto;
             }
 
             h2 {
@@ -145,15 +140,15 @@
                 text-align: left;
             }
 
-            .book-cover {
-                width: 80%;
-                max-width: 340px;
-            }
-
             .cta {
                 width: 100%;
+                max-width: 340px;
                 font-size: 18px;
-                padding: 14px 0;
+            }
+
+            footer {
+                margin-top: 30px;
+                font-size: 13px;
             }
         }
     </style>
@@ -170,20 +165,18 @@
         Disponible en format numérique et papier sur Lulu.com
     </p>
 
-    <img src="couverture-livre.jpg" class="book-cover" onclick="zoomImage(this)">
+    <img src="couverture-livre.jpg" class="book-cover" alt="Couverture du livre">
 
     <h2>Résumé</h2>
 
     <p>
-        Alfred Sisley, vieillard aguerri, meurtri de mélancolie, vit seul avec ses souvenirs.<br>
+        Alfred Sisley, vieillard aguerri, meurtri de mélancolie, vit seul avec ses souvenirs.
         Il attend en silence le signe de son seul véritable amour,
-        impuissant devant le temps, surmontant ses peines,
-        défiant ses rêves récurrents et ses écrits déchirants.<br><br>
-        Il fit la rencontre de Joé dont Sisley trouva en lui le miroir de ses trente ans,
-        une unité profonde et une puissante synergie. À travers sa musique,
-        qui agit sur lui comme l’écho de ses souvenirs,
-        il remue ainsi sa mémoire, racontant à Joé son histoire
-        tout en cherchant à retrouver ce quelque chose de manquant d’il y a si longtemps.
+        impuissant devant le temps, surmontant ses peines et ses rêves récurrents.
+        <br><br>
+        La rencontre avec Joé agit comme un miroir de ses trente ans.
+        À travers la musique, écho de sa mémoire, Sisley raconte son histoire,
+        cherchant à retrouver ce quelque chose de manquant d’il y a si longtemps.
     </p>
 
     <div class="buy-buttons">
@@ -203,22 +196,11 @@
     <footer>
         © 2026 <strong>Daniel L’Heureux</strong> — <em>Rencontres au Clair de Lune</em><br>
         Cette œuvre est protégée par le droit d’auteur.<br>
-        Toute modification, diffusion commerciale ou adaptation théâtrale,
-        cinématographique ou autre est interdite sans autorisation écrite.
+        Toute modification, diffusion commerciale ou adaptation
+        est interdite sans autorisation écrite.
     </footer>
 
 </div>
-
-<div id="zoom-modal" onclick="this.style.display='none'">
-    <img id="zoom-img">
-</div>
-
-<script>
-function zoomImage(img) {
-    document.getElementById("zoom-img").src = img.src;
-    document.getElementById("zoom-modal").style.display = "flex";
-}
-</script>
 
 </body>
 </html>
