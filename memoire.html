@@ -95,10 +95,12 @@ footer {
 @media (max-width: 768px) {
 
     .container {
-        width: 92%;
-        margin: 30px auto 40px;
-        padding: 22px;
-    }
+    width: 92%;
+    margin: 30px auto 40px;
+    padding: 22px;
+    overflow-x: hidden; /* ← AJOUTER ICI (ligne 101) */
+}
+
 
     h1 {
         font-size: 26px;
@@ -117,6 +119,15 @@ footer {
         width: 95%;
     }
 }
+/* sécurité centrage mobile */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 </style>
 </head>
 
@@ -151,8 +162,9 @@ footer {
 
     <footer>
         © 2026 <strong>Tous droits réservés</strong><br>
-        La consultation, l'impression et la reproduction sont autorisées<br>
-        à condition que le nom de l’auteur soit clairement mentionné.
+        La consultation, l'impression et la reproduction<br>
+        sont autorisées à condition que le nom de l’auteur<br>
+        soit clairement mentionné.
     </footer>
 
 </div>
