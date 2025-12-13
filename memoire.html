@@ -37,7 +37,7 @@ h1 {
     text-shadow: 0 2px 4px rgba(0,0,0,0.35);
 }
 
-/* ================= HEADER ================= */
+/* ================= ZONE COUVERTURE ================= */
 .cover-zone {
     display: grid;
     grid-template-columns: 360px 1fr;
@@ -46,7 +46,7 @@ h1 {
     margin-bottom: 120px;
 }
 
-/* ================= NOTE ================= */
+/* ================= NOTE VIEILLIE ================= */
 .memoire-note {
     position: relative;
     background: rgba(245,240,228,0.95);
@@ -102,7 +102,7 @@ h1 {
     transition: transform 0.35s ease;
 }
 
-/* ===== POSITIONNEMENT DES IMAGES (COMME ENTREPRISE) ===== */
+/* POSITIONNEMENT DES IMAGES */
 .previews img:nth-of-type(1),
 .previews img:nth-of-type(4),
 .previews img:nth-of-type(7),
@@ -124,7 +124,7 @@ h1 {
     grid-column: 2 / span 4;
 }
 
-/* ===== SCRAPBOOK ===== */
+/* EFFET SCRAPBOOK */
 @media (min-width: 1024px) {
     .previews img:nth-child(odd)  { transform: rotate(-1.8deg); }
     .previews img:nth-child(even) { transform: rotate(1.8deg); }
@@ -165,9 +165,15 @@ footer {
         padding: 0 20px;
     }
 
+    h1 {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
     .cover-zone {
         grid-template-columns: 1fr;
         gap: 40px;
+        margin-bottom: 60px;
     }
 
     .memoire-note {
@@ -188,6 +194,23 @@ footer {
         width: 100%;
         transform: none !important;
         margin-bottom: 40px;
+    }
+
+    .actions {
+        margin-top: 50px;
+        margin-bottom: 70px;
+    }
+
+    .button {
+        max-width: 90%;
+        padding: 14px 22px;
+        font-size: 16px;
+        line-height: 1.4;
+        display: inline-block;
+    }
+
+    footer {
+        margin-top: 30px;
     }
 }
 </style>
